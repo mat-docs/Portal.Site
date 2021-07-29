@@ -1,0 +1,53 @@
+site_name: 'ATLAS Platform Documentation Portal'
+site_description: 'F1-grade engineering telemetry tooling'
+docs_dir: 'docs'
+
+extra_css:
+  - stylesheets/extra.css
+  
+theme:
+  name: 'material'
+  palette:
+    primary: 'black'
+    accent: 'indigo'
+  custom_dir: overrides
+  icon:
+    repo: fontawesome/brands/github
+  features:
+    - navigation.tabs
+    - toc.integrate
+
+copyright: Copyright &copy; 2021 McLaren Applied Ltd.
+
+nav:
+  - Home:                 index.md
+  - Latest News:          news.md
+  - Development:          development.md
+  - Deployment:           deployment.md
+  - Support:              support.md
+  
+plugins: []
+
+markdown_extensions:
+  - abbr
+  - admonition
+  - attr_list
+  - codehilite
+  - def_list
+  - footnotes
+  - toc:
+      permalink: "#"
+  - meta
+  - pymdownx.caret
+  - pymdownx.critic
+  - pymdownx.details
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.tilde
+  - pymdownx.tabbed
+  - pymdownx.snippets:
+      base_path: docs
+  - pymdownx.superfences
+  - pymdownx.tasklist:
+      custom_checkbox: true

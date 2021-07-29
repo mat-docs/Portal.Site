@@ -1,0 +1,156 @@
+{% extends "main.html" %}
+{% block tabs %}
+{{ super() }}
+<style>
+    :root {
+        --atlas-primary-color: black;
+    }
+
+    .md-header {
+        position: initial
+    }
+
+    .md-main__inner {
+        margin: 0
+    }
+
+    .md-content {
+        display: none;
+        background-color: black;
+    }
+
+    .tx-container {
+        padding-top: 1rem;
+        background: 
+            url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1123 258'><path d='M1124,2c0,0 0,256 0,256l-1125,0l0,-48c0,0 16,5 55,5c116,0 197,-92 325,-92c121,0 114,46 254,46c140,0 214,-167 572,-166Z' style='fill: white' /></svg>") no-repeat bottom,
+            url("assets/carbon-fibre.jpg") no-repeat bottom ;
+        background-size: auto, cover;
+    }
+
+    .tx-hero {
+        margin: 0 .8rem;
+        color: var(--md-primary-bg-color)
+    }
+
+    .tx-hero h1 {
+        margin-bottom: 1rem;
+        color: currentColor;
+        font-weight: 700
+    }
+
+    .tx-hero__content {
+        padding-bottom: 6rem
+    }
+
+    .tx-hero .md-button {
+        margin-top: .5rem;
+        margin-right: .5rem;
+        color: var(--md-primary-bg-color)
+    }
+
+    .tx-hero .md-button--primary {
+        background-color: var(--md-primary-bg-color);
+        color: var(--atlas-primary-color);
+        border-color: var(--md-primary-bg-color)
+    }
+
+    .tx-hero .md-button:focus,
+    .tx-hero .md-button:hover {
+        background-color: var(--md-accent-fg-color);
+        color: var(--md-default-bg-color);
+        border-color: var(--md-accent-fg-color)
+    }
+
+    @media screen and (max-width:70em) {
+        .tx-hero h1 {
+            font-size: 1.4rem
+        }
+
+        .tx-hero__image {
+            text-align: center;
+        }
+
+        .tx-hero__image img {
+            max-width: 15rem;
+        }
+    }
+
+    @media screen and (min-width:70em) {
+        .md-sidebar--secondary {
+            display: none
+        }
+
+        .tx-hero {
+            display: flex;
+            align-items: stretch
+        }
+
+        .tx-hero__content {
+            max-width: 30rem;
+            margin-top: 3.5rem;
+            padding-bottom: 14vw
+        }
+
+        .tx-hero__image {
+            order: 1;
+            margin-left: auto;
+            margin-top: 3.0rem;
+        }
+
+        .tx-hero__image img {
+            max-width: 20rem;
+        }
+    }
+
+    @media screen and (min-width:76.25em) {
+        .md-sidebar--primary {
+            display: none
+        }
+
+        .tx-hero__image {
+            margin-left: auto;
+        }
+
+        .tx-hero__image img {
+            max-width: 20rem;
+        }
+    }
+</style>
+<section class="tx-container">
+    <div class="md-grid md-typeset">
+        <div class="tx-hero">
+            <div class="tx-hero__image">
+                <img src="assets/data.jpg" draggable="false">
+            </div>
+            <div class="tx-hero__content">
+                <h1>High-resolution real-time telemetry acquisition and display</h1>
+                <p>
+                    McLaren ATLAS is the industry standard visualization tool in Formula One,
+                    and a vital tool for engineering projects with demanding telemetry requirements.
+                </p>
+                <p>
+                    Monitor up to 100,000 channels at rates up to 1 KHz, capturing UDP, TCP
+                    or Kafka event streams, and recording to file or shared telemetry database.
+                </p>
+                <p>
+                    Analyze traces in a sophisticated waveform view, with integrated thresholds,
+                    events, alarms, band-pass filtering and functions &mdash; plus scatterplots,
+                    histograms, numeric gauges, and more than a dozen other displays.
+                </p>
+                <h2>Flexible &amp; Extensible</h2>
+                <p>
+                    Extend the client with plugins to add your own displays, protocols and file formats.<br>
+                    Check out the developer guides, samples and API references on this site for details.
+                </p>
+                <p>
+                    <i>New for 2021:</i> Integrate ATLAS into your environment using Web Services.<br>
+                    Supports time-series, relational, columnar, document, file and object storage &mdash;<br>
+                    with real-time updates and no client-side plugin.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+{% block content %}{% endblock %}
+{% block footer %}{% endblock %}
