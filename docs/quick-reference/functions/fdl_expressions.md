@@ -105,17 +105,17 @@ _expr_ `||` _expr_
  
 ## Bitwise Operators
 
-`&`
+`~`_expr_
+:   Bitwise `NOT`
+ 
+_expr_ `&` _expr_
 :   Bitwise `AND`
  
-`~`
-    Bitwise `NOT`
+_expr_ `|` _expr_
+:   Bitwise `OR`
  
-`|`
-    Bitwise `OR`
+_expr_ `>>` _expr_
+:   Shift right
  
-`>>`
-    Shift right
- 
-`<<`
-    Shift left
+_expr_ `<<` _expr_
+:   Shift left

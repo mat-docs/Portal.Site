@@ -32,7 +32,8 @@ nav:
     - Functions:
         - FDL Expressions:        quick-reference/functions/fdl_expressions.md
         - Processors:             quick-reference/functions/processors.md
-        
+        - DLLs:                   quick-reference/functions/dlls.md
+
   - Development:          development.md
   - Deployment:           deployment.md
   - Support:
