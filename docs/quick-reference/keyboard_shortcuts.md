@@ -6,13 +6,12 @@
 | ------------------------------------------------------------|---------------------------------------------------------------------------------------- |
 | ++ctrl+l++                                                  | Open Session Browser                                                                    |
 | ++p++ or ++insert++                                         | Open Parameter Browser                                                                  |
-| ++ctrl+q++                                                  | Quick Access Assistant                                                                  |
-| ++ctrl+o++                                                  | Open a workbook                                                                         |
-| ++ctrl+s++ _or_ ++ctrl+alt+s++                              | Saves a workbook                                                                        |
+| ++ctrl+q++                                                  | Quick-Access Assistant                                                                  |
 | ++ctrl+n++                                                  | New workbook page                                                                       |
 | ++page-down++                                               | Next workbook page                                                                      |
 | ++page-up++                                                 | Previous workbook page                                                                  |
-| ++ctrl+tab++ _&amp;_ ++ctrl+shift+tab++                     | Cycle between displays                                                                  |
+| ++ctrl+tab++                                                | Cycle between displays (forwards)                                                       |
+| ++ctrl+shift+tab++                                          | Cycle between displays (backwards)                                                      |
 | ++ctrl+enter++                                              | Toggles full screen mode                                                                |
 | ++ctrl+shift+r++                                            | Rebuild all functions                                                                   |
 | ++ctrl+e++                                                  | Show the Data Export Tool                                                               |
@@ -22,8 +21,8 @@
 | Shortcut                                                    | Description                                                                             |
 | ------------------------------------------------------------|---------------------------------------------------------------------------------------- |
 | ++ctrl+o++                                                  | Open a workbook                                                                         |
-| ++ctrl+s++ _or_ ++ctrl+alt+s++                              | Save a workbook                                                                         |
-| ++ctrl+s++ _or_ ++ctrl+alt+s++                              | Save a workbook as...                                                                   |
+| ++ctrl+s++                                                  | Save a workbook                                                                         |
+| ++ctrl+alt+s++                                              | Save a workbook as...                                                                   |
 | ++ctrl+shift+c++                                            | Copies a Session Reference to the clipboard                                             |
 | ++ctrl+shift+l++                                            | Load a Session Reference from the clipboard                                             |
 
@@ -32,19 +31,19 @@
 | Shortcut                                                    | Description                                                                             |
 | ------------------------------------------------------------|-----------------------------------------------------------------------------------------|
 | ++ctrl+q++                                                  | Cycle between Quick-Access features                                                     |
-| ++down++                                                    | Select the next Quick Access item                                                       |
-| ++up++                                                      | Select the previous Quick Access item                                                   |
-| ++enter++                                                   | Select the current Quick Access item                                                    |
-| ++escape++                                                  | Close the Quick Access Assistant                                                        |
+| ++down++                                                    | Select the next Quick-Access item                                                       |
+| ++up++                                                      | Select the previous Quick-Access item                                                   |
+| ++enter++                                                   | Select the current Quick-Access item                                                    |
+| ++escape++                                                  | Close the Quick-Access Assistant                                                        |
 
 ### Associating Compare Sets
 
 | Shortcut                                                    | Description                                                                             |
 | ------------------------------------------------------------|---------------------------------------------------------------------------------------- |
-| ++shift+1++ &#8230; ++shift+9++                             | Select the Compare Set for the _active display_                                         |
-| ++ctrl+1++ &#8230;​ ++ctrl+9++                               | Select the Compare Set for all displays on the _active page_                            |
-| ++ctrl+f1++ &#8230; ++ctrl+f9++                             | Select the Compare Set for all displays in the _active page group_                      |
-| ++ctrl+shift+1++ &#8230; ++ctrl+shift+9++                   | Select the Compare Set for _all displays_                                               |
+| ++shift+1++ &#8230; ++9++                                   | Select the Compare Set for the _active display_                                         |
+| ++ctrl+1++ &#8230;​ ++9++                                    | Select the Compare Set for all displays on the _active page_                            |
+| ++ctrl+f1++ &#8230; ++f9++                                  | Select the Compare Set for all displays in the _active page group_                      |
+| ++ctrl+shift+1++ &#8230; ++9++                              | Select the Compare Set for _all displays_                                               |
 | ++shift+minus++                                             | Clears the Compare Set for the _active display_                                         |
 | ++ctrl+minus++                                              | Clears the Compare Set for all displays on the _active page_                            |
 | ++ctrl+shift+minus++ <br> ++ctrl+alt+shift+minus++          | Clears the Compare Set for all displays in the active _page group_                      |
@@ -77,7 +76,8 @@
 | ++p++ or ++insert++                                         | Insert Parameter                                                                        |
 | ++del++                                                     | Delete Parameter                                                                        |
 | ++d++                                                       | Show the Display Properties                                                             |
-| ++ctrl+tab++ _&amp;_ ++ctrl+shift+tab++                     | Cycle between displays                                                                  |
+| ++ctrl+tab++                                                | Cycle between displays (forwards)                                                       |
+| ++ctrl+shift+tab++                                          | Cycle between displays (backwards)                                                      |
 | ++ctrl+f10++                                                | Toggles the current titlebar on/off                                                     |
 | ++ctrl+f11++                                                | Hides all titlebars                                                                     |
 | ++ctrl+f12++                                                | Shows all titlebars                                                                     |
@@ -110,8 +110,8 @@
 | ++r++                                                       | Reference cursor                                                                        |
 | ++h++                                                       | Hide/show cursor                                                                        |
 | ++t++                                                       | Hide/show parameter trace                                                               |
-| ++plus++ <br> ++num-plus++                                  | Zoom in                                                                                 |
-| ++minus++ <br> ++num-minus++                                | Zoom out                                                                                |
+| ++plus++                                                    | Zoom in                                                                                 |
+| ++minus++                                                   | Zoom out                                                                                |
 | ++ctrl+z++                                                  | Undo zoom                                                                               |
 | ++ctrl+alt+z++                                              | Undo all zooms                                                                          |
 | ++ctrl+y++                                                  | Redo zoom                                                                               |
@@ -141,8 +141,8 @@
 | ++x++                                                       | Show maximum statistics                                                                 |
 | ++n++                                                       | Show mean statistics                                                                    |
 | ++q++                                                       | Show standard deviation statistics                                                      |
-| ++plus++ <br> ++num-plus++                                  | Zoom in                                                                                 |
-| ++minus++ <br> ++num-minus++                                | Zoom out                                                                                |
+| ++plus++                                                    | Zoom in                                                                                 |
+| ++minus++                                                   | Zoom out                                                                                |
 | ++ctrl+z++                                                  | Undo zoom                                                                               |
 | ++ctrl+alt+z++                                              | Undo all zooms                                                                          |
 | ++z++                                                       | Zoom box                                                                                |
