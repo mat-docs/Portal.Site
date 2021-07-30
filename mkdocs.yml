@@ -21,10 +21,19 @@ copyright: Copyright &copy; 2021 McLaren Applied Ltd.
 
 nav:
   - Home:                 index.md
-  - Latest News:          news.md
+  - News:
+    - news/index.md
+    - Release Notes:
+      - news/release_notes/2021-R3.md
+      - news/release_notes/2021-R2.md
+  - Quick-Reference:
+    - quick-reference/keyboard_shortcuts.md
+    - quick-reference/session_identifier_codes.md
   - Development:          development.md
   - Deployment:           deployment.md
-  - Support:              support.md
+  - Support:
+    - support/zendesk.md
+    - support/sysreqs.md
   
 plugins: []
 

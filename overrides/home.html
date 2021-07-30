@@ -2,10 +2,6 @@
 {% block tabs %}
 {{ super() }}
 <style>
-    :root {
-        --atlas-primary-color: black;
-    }
-
     .md-header {
         position: initial
     }
@@ -20,10 +16,11 @@
     }
 
     .tx-container {
-        padding-top: 1rem;
+        padding-top: 1em;
+        padding-bottom: 4rem;
         background: 
             url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1123 258'><path d='M1124,2c0,0 0,256 0,256l-1125,0l0,-48c0,0 16,5 55,5c116,0 197,-92 325,-92c121,0 114,46 254,46c140,0 214,-167 572,-166Z' style='fill: white' /></svg>") no-repeat bottom,
-            url("assets/carbon-fibre.jpg") no-repeat bottom ;
+            url("assets/carbon-fibre-darker.jpg") no-repeat bottom;
         background-size: auto, cover;
     }
 
@@ -35,30 +32,19 @@
     .tx-hero h1 {
         margin-bottom: 1rem;
         color: currentColor;
-        font-weight: 700
+        font-weight: 700;
     }
 
     .tx-hero__content {
-        padding-bottom: 6rem
+        padding-bottom: 2rem;
     }
 
-    .tx-hero .md-button {
-        margin-top: .5rem;
-        margin-right: .5rem;
-        color: var(--md-primary-bg-color)
+    .tx-hero__image {
+        padding-bottom: 2rem;
     }
 
-    .tx-hero .md-button--primary {
-        background-color: var(--md-primary-bg-color);
-        color: var(--atlas-primary-color);
-        border-color: var(--md-primary-bg-color)
-    }
-
-    .tx-hero .md-button:focus,
-    .tx-hero .md-button:hover {
-        background-color: var(--md-accent-fg-color);
-        color: var(--md-default-bg-color);
-        border-color: var(--md-accent-fg-color)
+    .tx-hero__news h1 {
+        display: none;
     }
 
     @media screen and (max-width:70em) {
@@ -119,23 +105,21 @@
 <section class="tx-container">
     <div class="md-grid md-typeset">
         <div class="tx-hero">
-            <div class="tx-hero__image">
-                <img src="assets/data.jpg" draggable="false">
-            </div>
             <div class="tx-hero__content">
                 <h1>High-resolution real-time telemetry acquisition and display</h1>
                 <p>
                     McLaren ATLAS is the industry standard visualization tool in Formula One,
-                    and a vital tool for engineering projects with demanding telemetry requirements.
-                </p>
-                <p>
-                    Monitor up to 100,000 channels at rates up to 1 KHz, capturing UDP, TCP
-                    or Kafka event streams, and recording to file or shared telemetry database.
+                    and a vital tool for engineering projects with demanding telemetry requirements.<br>
+                    It is a modern desktop client for Windows, with responsive, high-resolution displays.
                 </p>
                 <p>
                     Analyze traces in a sophisticated waveform view, with integrated thresholds,
                     events, alarms, band-pass filtering and functions &mdash; plus scatterplots,
                     histograms, numeric gauges, and more than a dozen other displays.
+                </p>
+                <p>
+                    Monitor up to 100,000 channels at rates up to 1 KHz, capturing UDP, TCP
+                    or Kafka event streams, and recording to file or shared telemetry database.
                 </p>
                 <h2>Flexible &amp; Extensible</h2>
                 <p>
@@ -148,9 +132,22 @@
                     with real-time updates and no client-side plugin.
                 </p>
             </div>
+            <div class="tx-hero__image">
+                <img src="assets/data.jpg" draggable="false">
+
+                <div class="tx-hero__news">
+                    {% block content %}{{ super() }}{% endblock %}
+                </div>
+            </div>
         </div>
     </div>
 </section>
+<!-- Maybe have a features section further down? Like this? 
+<div class="md-container secondary-section">        
+    <div class="md-grid md-typeset">
+        <p>This is some text</p>
+    </div>
+</div>
+-->
 {% endblock %}
-{% block content %}{% endblock %}
 {% block footer %}{% endblock %}
