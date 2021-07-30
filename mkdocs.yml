@@ -28,7 +28,7 @@ nav:
       - news/release_notes/2021-R2.md
   - Quick-Reference:
     - quick-reference/keyboard_shortcuts.md
-    - quick-reference/session_identifier_codes.md
+    - quick-reference/session_identifier_macros.md
   - Development:          development.md
   - Deployment:           deployment.md
   - Support:
