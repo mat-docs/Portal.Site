@@ -1,4 +1,4 @@
-# Function Definition Language Expressions
+# Function Definition Language Operators
 
 ## Operator Order of Precedence
 

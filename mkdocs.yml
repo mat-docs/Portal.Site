@@ -31,18 +31,24 @@ nav:
     - quick-reference/mouse.md
     - quick-reference/session_identifier_macros.md
     - Functions:
-        - FDL Expressions:        quick-reference/functions/fdl_expressions.md
-        - Processors:             quick-reference/functions/processors.md
-        - DLLs:                   quick-reference/functions/dlls.md
-
-  - Development:          development.md
-  - Deployment:           deployment.md
+        - FDL Operators:            quick-reference/functions/fdl_operators.md
+        - Processors:               quick-reference/functions/processors.md
+        - DLLs:                     quick-reference/functions/dlls.md
+  - Developer Info:
+    - NuGet:
+      - Packages:                   development/nuget/index.md
+      - Feed Setup:                 development/nuget/setup.md
+    - Guides:
+      - Reading &amp; Writing Data: development/guides/data.md
+      - Creating Custom Displays:   development/guides/displays.md
+  - System Integration:
+    - integration/rta.md
+  - Downloads:
+    - downloads/index.md
   - Support:
     - support/zendesk.md
     - support/sysreqs.md
   
-plugins: []
-
 markdown_extensions:
   - abbr
   - admonition
