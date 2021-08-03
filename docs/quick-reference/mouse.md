@@ -10,7 +10,7 @@
     }
 </style>
 
-A mouse with a scroll-wheel is recommended, though many actions have [Keyboard Shortcuts](keyboard_shortcuts.md).
+A mouse with a scroll-wheel is recommended, though many actions have [Keyboard Shortcuts](keyboard-shortcuts.md).
 
 <br clear="both">
 

@@ -1,4 +1,4 @@
-# Custom ATLAS Displays
+# Creating Custom ATLAS Displays
 
 Use the [ATLAS Display API](../../../sdk/atlas-display-api/) to tailor ATLAS to your needs by adding custom displays.
 
