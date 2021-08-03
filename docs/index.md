@@ -1,6 +1,5 @@
 ---
 template: home.html
-title: "ATLAS Platform Documentation Portal"
 ---
 
 # Latest News
