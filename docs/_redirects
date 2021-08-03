@@ -1,1 +1,2 @@
-/integration/rta/sdk/*  https://mclaren-rta.netlify.app/:splat  200
+/integration/*  https://mclaren-rta.netlify.app/:splat  200
+/developer/atlas-displayapi/*  https://mclaren-atlas-displayapi.netlify.app/:splat  200
