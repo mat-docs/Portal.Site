@@ -1,6 +1,6 @@
 # Integrating with Existing Systems
 
-ATLAS [Remote Telemetry Architecture (RTA)](../../../sdk/rta) defines web services to integrate with your existing environment:
+ATLAS [Remote Telemetry Architecture (RTA)](sdk/rta) defines web services to integrate with your existing environment:
 
 <!-- has to be an object element otherwise the fonts don't load -->
 <object type="image/svg+xml" data="../assets/rta-intro.svg" class="diagram" title="Simple integration with ATLAS"></object>
@@ -13,6 +13,6 @@ This can work with a wide range of storage technologies, such as:
 * [SQL Server](https://www.microsoft.com/en-gb/sql-server), [PostgreSQL](https://www.postgresql.org/), [MySQL](https://www.mysql.com/)...
 
 No ATLAS plugin development is required, and we provide an implementation toolkit to get you up running with minimal development.
-Includes support for [live monitoring](../../../sdk/rta/#live-monitoring) using Web Sockets.
+Includes support for [live monitoring](sdk/rta/#live-monitoring) using Web Sockets.
 
-[Integration Guide](../../../sdk/rta/){ .md-button .md-button--primary } [Quick-Start Tutorial](../../../sdk/rta/devguide/tutorials/quick-start/){ .md-button } [REST API Reference](../../../sdk/rta/api/){ .md-button }
+[Integration Guide](sdk/rta/){ .md-button .md-button--primary } [Quick-Start Tutorial](sdk/rta/devguide/tutorials/quick-start/){ .md-button } [REST API Reference](sdk/rta/api/){ .md-button }
