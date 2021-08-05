@@ -1,6 +1,6 @@
 ---
 template: home.html
-title: ATLAS Documentation Portal
+title: ATLAS Platform Documentation Portal
 hide:
   - navigation
   - toc
