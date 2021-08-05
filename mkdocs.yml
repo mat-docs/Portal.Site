@@ -6,7 +6,7 @@ site_url: https://docs.atlas.mclarenapplied.com/
 theme:
   name: 'material'
   palette:
-    primary: 'black'
+    primary: 'grey'
     accent: 'indigo'
   custom_dir: overrides
   # assets/swoosh is cached aggressively - rename if icons change
@@ -43,8 +43,8 @@ nav:
       - Packages:                   developer/nuget/index.md
       - Feed Setup:                 developer/nuget/setup.md
     - SQL Race API:                 developer/sqlrace-api.md
-    - ATLAS Display API:            developer/atlas-displayapi.md
-  - Integration Guide:              integration/index.md
+    - 📘 ATLAS Display API:         developer/atlas-displayapi.md
+  - 📙 Integration Guide:           integration/index.md
   - Downloads:
     - downloads/index.md
   - Support:
