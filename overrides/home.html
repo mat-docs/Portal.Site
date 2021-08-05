@@ -2,152 +2,218 @@
 {% block tabs %}
 {{ super() }}
 <style>
-    .md-header {
-        position: initial
+
+    .hero {
+        margin: 1rem 0 2rem 0;
     }
 
-    .md-main__inner {
-        margin: 0
+    .hero h1 {
+        margin: 0;
     }
 
-    .md-content {
+    .hero h2 {
+        color: var(--md-default-fg-color--light);
+        margin-top: 0.5rem;
+    }
+
+    img#company-logo {
         display: none;
-        background-color: black;
+        float: right;
+        width: 200px;
+        height: 57px; 
+    }
+    
+    @media screen and (min-width:600px) {
+        img#company-logo {
+            display: block;
+        }    
     }
 
-    .tx-container {
-        padding-top: 1em;
-        padding-bottom: 4rem;
-        background: 
-            url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1123 258'><path d='M1124,2c0,0 0,256 0,256l-1125,0l0,-48c0,0 16,5 55,5c116,0 197,-92 325,-92c121,0 114,46 254,46c140,0 214,-167 572,-166Z' style='fill: white' /></svg>") no-repeat bottom,
-            url("assets/backgrounds/carbon-fibre-darker.jpg") no-repeat bottom;
-        background-size: auto, cover;
+    .cards-section ul {
+        list-style: none;
+        margin: 0;
     }
 
-    .tx-hero {
-        margin: 0 .8rem;
-        color: var(--md-primary-bg-color)
+    .cards-section li {
+        margin: 0;
+        padding: 0;
     }
 
-    .tx-hero h1 {
-        margin-bottom: 1rem;
-        color: currentColor;
-        font-weight: 700;
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit,minmax(290px,1fr));
+        column-gap: 1rem;
+        row-gap: 1rem;
+        margin: 0;
+        padding: 0;
     }
 
-    .tx-hero__content {
-        padding-bottom: 2rem;
+    .grid > grid-item {
+        display: flex;
+        align-content: stretch;
+        align-items: stretch;
     }
 
-    .tx-hero__image {
-        padding-bottom: 2rem;
+    .grid > .grid-item > * {
+        width: 100%;
+        height: 100%;
     }
 
-    .tx-hero__news h1 {
+    .media-card {
+        border-radius: 0.5rem;
+        border: 1px solid white;
+        box-shadow: 0 1.6px 3.6px 0 rgb(0,0,0,0.13), 0 0.3px 0.9px 0 rgb(0,0,0,0.11);
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        width: 200px;
+    }
+
+    .media-card .media-card-image {
+        border-top-left-radius: 0.5rem;
+        border-top-right-radius: 0.5rem;
+        display: block;
+        position: relative;
+        overflow: hidden;
+        margin: 0;
+        padding-top: 40%;
+    }
+
+    .media-card-image {
+        padding-bottom: 3rem !important;
+    }
+
+    .media-card img {
+        display: block;
+        object-fit: cover;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+    }
+
+    .media-card object {
+        width: 100%;
+        padding: 1rem;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+    }
+
+    .media-card-content {
+        padding: 1rem;
+    }
+
+    .media-card-content h2 {
+        margin: 0;
+    }
+
+    ul.media-card-content-body-links, ul.media-card-content-body-links li {
+        margin: 0 !important;
+    }
+
+    main .md-content {
+        overflow: visible;
+    }
+
+    main article {
+        margin: 0 !important;
+        padding: 1rem !important;
+        border-radius: 0.5rem;
+        border: 1px solid white;
+        box-shadow: 0 1.6px 3.6px 0 rgb(0,0,0,0.13), 0 0.3px 0.9px 0 rgb(0,0,0,0.11);
+    }
+
+    main article h1 {
         display: none;
     }
 
-    @media screen and (max-width:70em) {
-        .tx-hero h1 {
-            font-size: 1.4rem
-        }
-
-        .tx-hero__image {
-            text-align: center;
-        }
-
-        .tx-hero__image img {
-            max-width: 15rem;
-        }
+    main article h2:first-of-type {
+        margin-top: 0;
     }
 
-    @media screen and (min-width:70em) {
-        .md-sidebar--secondary {
-            display: none
-        }
-
-        .tx-hero {
-            display: flex;
-            align-items: stretch
-        }
-
-        .tx-hero__content {
-            max-width: 30rem;
-            margin-top: 3.5rem;
-            padding-bottom: 14vw
-        }
-
-        .tx-hero__image {
-            order: 1;
-            margin-left: auto;
-            margin-top: 3.0rem;
-        }
-
-        .tx-hero__image img {
-            max-width: 20rem;
-        }
-    }
-
-    @media screen and (min-width:76.25em) {
-        .md-sidebar--primary {
-            display: none
-        }
-
-        .tx-hero__image {
-            margin-left: auto;
-        }
-
-        .tx-hero__image img {
-            max-width: 20rem;
-        }
-    }
 </style>
 <section class="tx-container">
-    <div class="md-grid md-typeset">
-        <div class="tx-hero">
-            <div class="tx-hero__content">
-                <h1>High-resolution real-time telemetry acquisition and display</h1>
-                <p>
-                    McLaren ATLAS is the industry standard visualization tool in Formula One,
-                    and a vital tool for engineering projects with demanding telemetry requirements.<br>
-                    It is a modern desktop client for Windows, with responsive, high-resolution displays.
-                </p>
-                <p>
-                    Analyze traces in a sophisticated waveform view, with integrated thresholds,
-                    events, alarms, band-pass filtering and functions &mdash; plus scatterplots,
-                    histograms, numeric gauges, and more than a dozen other displays.
-                </p>
-                <p>
-                    Monitor up to 100,000 channels at rates up to 1 KHz, capturing UDP, TCP
-                    or Kafka event streams, and recording to file or shared telemetry database.
-                </p>
-                <h2>Flexible &amp; Extensible</h2>
-                <p>
-                    Extend the client with plugins to add your own displays, protocols and file formats.<br>
-                    Check out the developer guides, samples and API references on this site for details.
-                </p>
-                <p>
-                    <i>New for 2021:</i> Integrate ATLAS into your environment using Web Services.<br>
-                    Supports time-series, relational, columnar, document, file and object storage &mdash;<br>
-                    with real-time updates and no client-side plugin.
-                </p>
-            </div>
-            <div class="tx-hero__image">
-                <img src="assets/hero/data.jpg" draggable="false">
+    <div class="md-grid">
 
-                <div class="tx-hero__news">
-                    {% block content %}{{ super() }}{% endblock %}
-                </div>
-            </div>
+        <div class="hero md-typeset">
+            <img id="company-logo" src="assets/hero/applied-logo.png" alt="McLaren Applied Logo" draggable="false" />
+            <h1 style="margin-bottom: 0">High-resolution real-time telemetry acquisition and display</h1>
+            <h2 role="doc-subtitle">for engineering projects with demanding telemetry requirements</h2>
         </div>
+
+        <div class="cards-section">
+            <ul class="grid">
+                <li class="grid-item">
+                    <article class="media-card">
+                        <figure class="media-card-image">
+                            <img src="assets/hero/hpc.jpg">
+                        </figure>
+                        <div class="media-card-content md-typeset">
+                            <div class="media-card-content-titles">
+                                <h2>User Guide</h2>
+                            </div>
+                            <div class="media-card-content-body">
+                                <p>Help and information for both new and experienced users.</p>
+                                <ul class="media-card-content-body-links">
+                                    <li><a href="manual/">Quick-Reference Guide</a></li>
+                                </ul>                                
+                            </div>
+                        </div>
+                    </article>
+                </li>
+                <li class="grid-item">
+                    <article class="media-card">
+                        <figure class="media-card-image">
+                            <img src="assets/hero/code.png">
+                        </figure>
+                        <div class="media-card-content md-typeset">
+                            <div class="media-card-content-titles">
+                                <h2>Developer Guide</h2>
+                            </div>
+                            <div class="media-card-content-body">
+                                <p>Extend ATLAS with plugins, and work with McLaren telemetry recorders and data.</p>
+                                <ul class="media-card-content-body-links">
+                                    <li><a href="developer/nuget/">Get NuGet libraries</a></li>
+                                    <li><a href="developer/sqlrace-api/">Reading, writing &amp; recording data</a></li>
+                                    <li><a href="developer/atlas-displayapi/">Create custom ATLAS displays</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </article>
+                </li>
+                <li class="grid-item">
+                    <article class="media-card">
+                        <figure class="media-card-image">
+                            <object type="image/svg+xml" data="assets/hero/architecture.svg" class="diagram" title="ATLAS integration architecture"></object>
+                        </figure>
+                        <div class="media-card-content md-typeset">
+                            <div class="media-card-content-titles">
+                                <h2>Integration Guide</h2>
+                            </div>
+                            <div class="media-card-content-body">
+                                <p>Connect ATLAS to existing data environments: on-premises and on-cloud.</p>
+                                <ul class="media-card-content-body-links">
+                                    <li><a href="integration/">Overview and Architectures</a></li>
+                                    <li><a href="integration/devguide/">Developer Guide with tutorials</a></li>
+                                    <li><a href="integration/api/">REST API</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </article>
+                </li>
+            </ul>
+
+        </div>
+
     </div>
 </section>
-<!-- Maybe have a features section further down? Like this? 
-<div class="md-container secondary-section">        
-    <div class="md-grid md-typeset">
-        <p>This is some text</p>
-    </div>
-</div>
--->
+{% endblock %}
+{% block content %}
+{{ super() }}
 {% endblock %}
 {% block footer %}{% endblock %}

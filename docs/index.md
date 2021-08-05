@@ -1,10 +1,15 @@
 ---
 template: home.html
+title: ATLAS Documentation Portal
+hide:
+  - navigation
+  - toc
 ---
+# More Information
 
-# Latest News
+## Latest News
 
-## ATLAS 2021-R3 Due
+### ATLAS 2021-R3 Due
 
 _6th August 2021_
 
