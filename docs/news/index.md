@@ -11,6 +11,7 @@ In this release, we delivered the below new features
 * ADS Standalone installer 
     * Live weather data support in ATLAS 10 through Pitwall Weather Server
 * vTAG Server update
+
 And we focused on delivering improvements in the below areas
 * Alarms 
 * Distance and Overlays 
