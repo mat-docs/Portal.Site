@@ -24,8 +24,6 @@ nav:
   - Home: index.md
   - News:
     - news/index.md
-    - Release Notes:
-      - news/release-notes/2021-R3.md
   - User Guide:
     - Index: manual/index.md
     - User Interface:
