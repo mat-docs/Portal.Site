@@ -9,12 +9,18 @@ hide:
 
 ## Latest News
 
-### ATLAS 2021-R3 Due
+### ATLAS 2021-R3 (10.4.3.382)
 
 _6th August 2021_
 
-* Alarms behaviour improved
-* Distance-mode live &amp; session comparison issues fixed
-* Transparently handles PGVs updated with same version
-* Full support for OAuth 2.0 RTA Web Services
-* RTA Web Services implementation toolkit
+In this release, we delivered the below new features
+
+* Support for multiple instances of PGVs with same ID
+* Ability rename index sources in the Session Browser
+* Added new Data point modes in the Scatterplot
+* Implemented service connection setup for external data sources (RTA toolkit services)
+* ADS Standalone installer 
+    * Live weather data support in ATLAS 10 through Pitwall Weather Server
+* vTAG Server update
+
+[more news] (/news/index.md)
