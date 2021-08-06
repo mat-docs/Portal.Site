@@ -23,4 +23,4 @@ In this release, we delivered the below new features
     * Live weather data support in ATLAS 10 through Pitwall Weather Server
 * vTAG Server update
 
-[more news] (/news/index.md)
+[more news](/news/index.md)
