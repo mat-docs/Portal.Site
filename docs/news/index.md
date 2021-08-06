@@ -3,7 +3,8 @@
 ## ATLAS 2021-R3 (10.4.3.382)
 _6th August 2021_
 
-In this release, we delivered the below new features
+In this release, we delivered the below new features:
+
 * Support for multiple instances of PGVs with same ID
 * Ability rename index sources in the Session Browser
 * Added new Data point modes in the Scatterplot
@@ -12,7 +13,8 @@ In this release, we delivered the below new features
     * Live weather data support in ATLAS 10 through Pitwall Weather Server
 * vTAG Server update
 
-And we focused on delivering improvements in the below areas
+And we focused on delivering improvements in the below areas:
+
 * Alarms 
 * Distance and Overlays 
 * Waveform
