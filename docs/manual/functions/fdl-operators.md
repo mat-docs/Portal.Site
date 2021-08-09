@@ -5,7 +5,7 @@
 * `||` boolean operator _(left associative)_ 
 * `&&` boolean operator _(left associative)_
 * `!` boolean operator _(non-associative)_
-* `&lt;`, `&lt;=`, `&gt;`, `&gt;=`, `==`, `!=` relational operators _(left associative)_
+* `<`, `<=`, `>`, `>=`, `==`, `!=` relational operators _(left associative)_
 * `=` assignment operator _(right associative)_
 * `+` and `-` operators _(left associative)_
 * `*`, `/` and `%` operators _(left associative)_ 
