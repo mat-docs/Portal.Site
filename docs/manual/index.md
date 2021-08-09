@@ -1,6 +1,13 @@
-# User Guide &mdash; Quick-Reference Topics
+# User Guide
 
-## User Interface
+## Articles
+
+[Scatterplot Sample Modes](articles/scatterplot-sample-modes.md) (2021-08-06)
+:   _Understand how Scatterplot **Data Point Mode** alters the way samples are plotted for the Scatterplot display_
+
+## Quick-Reference
+
+### User Interface
 
 [Keyboard Shortcuts](ui/keyboard.md)
 :   _Full list of ATLAS keyboard shortcuts_
@@ -8,12 +15,12 @@
 [Mouse Gestures](ui/mouse.md)
 :   _Mouse gestures for panning and zooming_
 
-## Recording
+### Recording
 
 [Session Identifier Macros](recording/session-identifier-macros.md)
 :   _Macros for populating session metadata from timestamps, session details and incoming data_
 
-## Functions
+### Functions
 
 [FDL (Function Definition Language) Operators](functions/fdl-operators.md)
 :   _Complete list of operators and precedence rules_
