@@ -1,2 +1,3 @@
 /integration/*  https://mclaren-rta.netlify.app/:splat  200!
 /developer/atlas-displayapi/*  https://mclaren-atlas-displayapi.netlify.app/:splat  200!
+https://docs.atlas.mclarenapplied.com/* https://atlas.mclarenapplied.com/:splat 301!
