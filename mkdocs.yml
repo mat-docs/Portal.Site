@@ -28,6 +28,7 @@ nav:
     - Index: manual/index.md
     - Articles:
       - manual/articles/scatterplot-sample-modes.md
+      - manual/articles/markers.md
     - User Interface:
       - manual/ui/keyboard.md
       - manual/ui/mouse.md

@@ -5,6 +5,9 @@
 [Scatterplot Sample Modes](articles/scatterplot-sample-modes.md) (2021-08-06)
 :   _Understand how Scatterplot **Data Point Mode** alters the way samples are plotted for the Scatterplot display_
 
+[Markers](articles/markers.md) (2021-11-17)
+:   _Information on annotating ranges of data using markers_
+
 ## Quick-Reference
 
 ### User Interface

@@ -47,6 +47,7 @@ The ATLAS Data layer is provided by the SQL Race API, which provides:
     * Reading and writing events
     * Reading and writing data
     * Calculating lap statistics
+    * Adding and reading [Markers](../articles/markers.md)
 
 [MAT.SqlRace.StandaloneRecorder](https://github.com/mat-docs/MAT.OCS.SQLRace.Examples/tree/master/MAT.SqlRace.StandaloneRecorder)
 :   * Embedding the ATLAS Data Server Telemetry (DST) recorder
