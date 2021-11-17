@@ -1,6 +1,15 @@
 # Latest News
 
-TODO UPDATE NEWS
+## ATLAS 2021-R4 (10.4.4.220)
+_12th November 2021_
+
+In this release, we delivered the below new features and improvements
+
+* Decode and Data Source dll support for ATLAS 10 client
+* Session Browser query performance improvements on large session lists
+* Alarms/functions performance improvements
+* FiA lite licence
+
 
 ## ATLAS 2021-R3 (10.4.3.382)
 _6th August 2021_
