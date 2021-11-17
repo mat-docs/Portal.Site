@@ -11,7 +11,7 @@ hide:
 
 ### ATLAS 2021-R4 (10.4.4.220)
 
-_12th August 2021_
+_12th November 2021_
 
 In this release, we delivered the below new features and improvements
 
