@@ -9,18 +9,15 @@ hide:
 
 ## Latest News
 
-### ATLAS 2021-R3 (10.4.3.382)
+### ATLAS 2021-R4 (10.4.4.220)
 
-_6th August 2021_
+_12th August 2021_
 
-In this release, we delivered the below new features
+In this release, we delivered the below new features and improvements
 
-* Support for multiple instances of PGVs with same ID
-* Ability rename index sources in the Session Browser
-* Added new Data point modes in the Scatterplot
-* Implemented service connection setup for external data sources (RTA toolkit services)
-* ADS Standalone installer 
-    * Live weather data support in ATLAS 10 through Pitwall Weather Server
-* vTAG Server update
+* Decode and Data Source dll support for ATLAS 10 client
+* Session Browser query performance improvements on large session lists
+* Alarms/functions performance improvements
+* FiA lite licence
 
 [more news](news/index.md)
