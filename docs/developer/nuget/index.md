@@ -51,3 +51,15 @@ A free [GitHub](https://github.com/) account is required.
 **MAT.OCS.RTA.Toolkit.API.GrpcClients**
 :   Pre-compiled gRPC clients for the RTA Toolkit Services;  
     Supports .NET Standard 2.1 and .NET 5.0
+
+## ATLAS Advanced Streams
+
+**MAT.OCS.Streaming**
+:   Streaming telemetry client compatible with the ATLAS technology platform
+
+**MAT.OCS.Streaming.Kafka**
+:   Provides an Apache Kafka client for MAT.OCS.Streaming
+
+**MAT.OCS.Streaming.Codecs.Protobuf**
+:   Provides a faster, more compact serialization for telemetry data and samples;  
+    Prefer this codec when working with large topics

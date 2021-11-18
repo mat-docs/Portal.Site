@@ -37,6 +37,10 @@ nav:
         - FDL Operators:            manual/functions/fdl-operators.md
         - Processors:               manual/functions/processors.md
         - DLLs:                     manual/functions/dlls.md
+    - ECU Bridge:
+        - Concepts:                 manual/ecu-bridge/concepts.md
+        - Specification:            manual/ecu-bridge/specification.md
+        - Code Sample:              manual/ecu-bridge/code-samples.md
   - Developer Guide:
     - developer/index.md
     - NuGet:
@@ -44,6 +48,7 @@ nav:
       - Feed Setup:                 developer/nuget/setup.md
     - SQL Race API:                 developer/sqlrace-api.md
     - 📘 ATLAS Display API:         developer/atlas-displayapi.md
+    - ATLAS Advanced Streams:       developer/atlas-advanced-streams/index.md
   - 📙 Integration Guide:           integration/index.md
   - Downloads:
     - downloads/index.md

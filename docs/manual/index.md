@@ -31,3 +31,14 @@
 [Custom Function DLLs](functions/dlls.md)
 :   _Quick-reference template for custom functions_;  
     _ Worked example in [Code Samples](../developer/sqlrace-api.md#code-samples-index)_
+
+### ECU Bridge
+
+[Concepts](ecu-bridge/concepts)
+:   _Concept and architecture overview_
+
+[Specification](ecu-bridge/specification)
+:   _Protocols specifications_
+
+[Code samples](ecu-bridge/code-samples)
+:   _Code examples in C# in ADD LINK_
