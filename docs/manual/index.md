@@ -37,8 +37,5 @@
 [Concepts](ecu-bridge/concepts)
 :   _Concept and architecture overview_
 
-[Specification](ecu-bridge/specification)
-:   _Protocols specifications_
-
-[Code samples](ecu-bridge/code-samples)
-:   _Code examples in C# in ADD LINK_
+[Dependencies](ecu-bridge/dependencies)
+:   _Description of the services used by ECU Bridge_

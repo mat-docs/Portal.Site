@@ -1,5 +1,11 @@
 # ECU Bridge
 
+## Concept
+
+The ECU Bridge is a standalone application bridging data between incoming ATLAS telemetry and Kafka.
+
+![ecu-bridge.drawio.png](../../assets/diagrams/ecu-bridge.drawio.png)
+
 ## Prerequisites
 
 - .NET 4.6.2

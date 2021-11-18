@@ -116,11 +116,31 @@ DST recorder: Data Server Telemetry recorder (wideband)
 
 MSI provided. Requires .NET 4.6.2 and a compatible SQL Race Recorder.
 
-#### ATLAS 10 Recorder
+#### ATLAS Advanced Stream Recorder
 
 _Records streaming data into ATLAS 10._
 
-There is an ATLAS Advanced Streams "AAS recorder" included with ATLAS 10.
+There is an ATLAS Advanced Streams "AAS recorder" included with ATLAS 10, which can be configured in _Tools > Options > Recorders > AAS Recorder_ 
+
+![aas-recorder-config.png](../../assets/screenshots/aas-recorder-config.png)
+
+Configure the Dependencies Service client:
+- _Client type_: Service
+- Dependencies service URI similar to http://localhost:8180/api/dependencies
+    - Adjust the URI to match the host reachable from the client
+    - Include the trailing slash in the URI
+- Enter `dev` for the _Group_ name
+    - This is namespacing token. The Streaming Dependencies Service ships pre-configured to whitelist the `dev` group, but additional groups can be configured
+
+Configure the Kafka settings:
+
+- Broker list:
+    - For a single node, format as: `server:9092`
+    - For a cluster, format as: `server1:9092, server2:9092, server:9092`
+- Cluster
+    - Friendly name for the Kafka Cluster
+
+Press _OK_ to commit your changes. Verify that your 
 
 ### Topics, Streams and Sessions
 
@@ -478,7 +498,7 @@ Example:
 
 Notice the declaration of both  `dataFormat`  and  `atlasConfiguration`  dependencies. This is a minimum requirement to use the ATLAS 10 stream recorder.
 
-[session.schema.json](resources/session.schema.json)
+[session.schema.json](../../assets/aas/session.schema.json)
 
 ##### tdata
 
@@ -519,7 +539,7 @@ Status values reflect results of data retrieval, and are defined as the followin
 These statuses provide detailed information for models that require it, but in general, all values are useful except when NaN.\
 See  [Data Feeds, Formats and Views](README.md#data-feeds-formats-and-views)  for information about the  `feed`  and  `format`  fields.
 
-[tdata.schema.json](resources/tdata.schema.json)
+[tdata.schema.json](../../assets/aas/tdata.schema.json)
 
 ##### tsamples
 
@@ -557,7 +577,7 @@ Example:
 }
 ```
 
-[tsamples.schema.json](resources/tsamples.schema.json)
+[tsamples.schema.json](../../assets/aas/tsamples.schema.json)
 
 #### events
 
@@ -579,7 +599,7 @@ Example:
 }
 ```
 
-[events.schema.json](resources/events.schema.json)
+[events.schema.json](../../assets/aas/events.schema.json)
 
 ##### lap
 
@@ -609,18 +629,18 @@ Trigger sources include:
 These triggers give rise to business logic to describe the lap type, which is one of:  
 `fastLap`,  `pitLane`,  `outLap`, or  `inLap`. The exact business logic is outside the scope of this specification and may vary slightly by race formula.
 
-[lap.schema.json](resources/lap.schema.json)
+[lap.schema.json](../../assets/aas/lap.schema.json)
 
 ##### sync
 
 Sync messages create synchronization points across message types.
 
-See  [It's all about Time](README.md#its-all-about-time)  for more information.
+See  [It's all about Time](#its-all-about-time)  for more information.
 
--   [lap.schema.json](resources/lap.schema.json)
--   [session.schema.json](resources/session.schema.json)
--   [tsamples.schema.json](resources/tsamples.schema.json)
--   [tdata.schema.json](resources/tdata.schema.json)
+-   [lap.schema.json](../../assets/aas/lap.schema.json)
+-   [session.schema.json](../../assets/aas/session.schema.json)
+-   [tsamples.schema.json](../../assets/aas/tsamples.schema.json)
+-   [tdata.schema.json](../../assets/aas/tdata.schema.json)
 
 ### Protobuf extension
 
@@ -650,9 +670,4 @@ Use the IDL (attached to this page) to generate a parser in a wide range of lang
 
 For more information, see  [https://developers.google.com/protocol-buffers/](https://developers.google.com/protocol-buffers/)
 
--   [protocol.proto](resources/protocol.proto)
-
-
-## Code Samples
-
-C# code samples can be found [here](./csharp.md).
+-   [protocol.proto](../../assets/aas/protocol.proto)

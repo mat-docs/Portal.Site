@@ -39,8 +39,7 @@ nav:
         - DLLs:                     manual/functions/dlls.md
     - ECU Bridge:
         - Concepts:                 manual/ecu-bridge/concepts.md
-        - Specification:            manual/ecu-bridge/specification.md
-        - Code Sample:              manual/ecu-bridge/code-samples.md
+        - Dependencies:             manual/ecu-bridge/dependencies.md
   - Developer Guide:
     - developer/index.md
     - NuGet:
@@ -48,7 +47,14 @@ nav:
       - Feed Setup:                 developer/nuget/setup.md
     - SQL Race API:                 developer/sqlrace-api.md
     - 📘 ATLAS Display API:         developer/atlas-displayapi.md
-    - ATLAS Advanced Streams:       developer/atlas-advanced-streams/index.md
+    - ATLAS Advanced Streams:
+        - Concepts:                 developer/atlas-advanced-streams/index.md
+        - Code Samples (C&#35;):             
+            - Intro:                developer/atlas-advanced-streams/csharp/README.md
+            - Read:                 developer/atlas-advanced-streams/csharp/read.md
+            - Write:                developer/atlas-advanced-streams/csharp/write.md
+            - Model Execution:      developer/atlas-advanced-streams/csharp/model.md
+            - Advanced Samples:     developer/atlas-advanced-streams/csharp/advanced.md
   - 📙 Integration Guide:           integration/index.md
   - Downloads:
     - downloads/index.md
