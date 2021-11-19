@@ -58,6 +58,6 @@ The data format id is in every message to allow a long-running stream to transit
 
 #### Binding a View
 
-The library allows a client to define a view onto a feed: a list of parameters and aggregates it expects to see.
+The library allows a client to define a view onto a feed - a list of parameters and aggregates it expects to see.
 
 The effect of this view is that upstream sources can insert additional parameters into a feed without breaking client compatibility, as the view presents a stable list of parameters to the client code.

@@ -1,5 +1,4 @@
 # Design Concept
-#### Backbone
 
 The core idea is to provide a backbone for streaming data in and out of the ATLAS ecosystem.
 
@@ -24,7 +23,7 @@ Sinks could include:
 -   Big data streaming frameworks
 -   Arbitrary data files
 
-#### Key Advantages for Developers
+**Key Advantages for Developers**
 
 -   Few dependencies
 -   Easy to insert and export data
@@ -32,7 +31,7 @@ Sinks could include:
 -   Standard model to connect distributed systems
 -   API designed specifically for streaming data
 
-#### Key Advantages for System Administrators
+**Key Advantages for System Administrators**
 
 -   No multicast
 -   Simple configuration to communicate to developers

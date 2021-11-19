@@ -43,4 +43,4 @@ Refer to [API Reference - Dependencies Service](https://mclarenappliedtechnologi
 
 Check the service has started.
 
-Browse to http://localhost:8180/api/dependencies/ and check for a textual usage statement. This URI - modified appropriately for the host server via config - is supplied to the ATLAS 10 Streaming Recorder, and to the MAT.OCS.Streaming API. Always include the trailing slash.
+Browse to [http://localhost:8180/api/dependencies/](http://localhost:8180/api/dependencies/) and check for a textual usage statement. This URI - modified appropriately for the host server via config - is supplied to the ATLAS 10 Streaming Recorder, and to the MAT.OCS.Streaming API. Always include the trailing slash.

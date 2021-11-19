@@ -1,7 +1,5 @@
 # ECU Bridge
 
-## Concept
-
 The ECU Bridge is a standalone application bridging data between incoming ATLAS telemetry and Kafka.
 
 ![ecu-bridge.drawio.png](../../assets/ecu-bridge.drawio.png)
@@ -13,7 +11,7 @@ The ECU Bridge is a standalone application bridging data between incoming ATLAS 
 
 ## Configuration
 
-Unzip the ECU Bridge 0.13.0.zip file
+Unzip the ECU Bridge 0.13.0.zip file that you downloaded from [the portal](https://www.mclarenelectronics.com/portal/Portal/Index.aspx).
 
 Configuration is located in _Config.json_, which specifies:
 
