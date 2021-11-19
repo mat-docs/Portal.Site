@@ -10,13 +10,21 @@ Install Visual Studio Code.
 
 Install Python 3.7 or later, which should come with `pip`.
 
-From the project directory:
+From the project directory, it is recommended to first create a virtual environment:
+
+    python -m venv .venv
+
+Then install dependencies:
 
     pip install -r requirements.txt
 
 Preview the docs in a local web browser as follows:
 
     mkdocs serve
+
+On windows machine, do:
+
+    python -m mkdocs serve
 
 ## Editing
 

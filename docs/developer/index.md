@@ -19,3 +19,10 @@ Get the libraries from our [GitHub packages feed](nuget/index.md).
     * _Concepts and Design Patterns_
     * _Tutorials with Code Samples_
     * _API Reference_
+
+[Streaming Data in and out of the ATLAS ecosystem using ATLAS Advanced Streams](atlas-advanced-streams/concepts/index.md)
+:   _Detailed documentation, including:_
+
+    * _Concepts_
+    * _Specifications_
+    * _Tutorials with Code Samples_
