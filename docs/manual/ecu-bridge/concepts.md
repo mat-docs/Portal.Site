@@ -4,12 +4,12 @@
 
 The ECU Bridge is a standalone application bridging data between incoming ATLAS telemetry and Kafka.
 
-![ecu-bridge.drawio.png](../../assets/diagrams/ecu-bridge.drawio.png)
+![ecu-bridge.drawio.png](./assets/ecu-bridge.drawio.png)
 
 ## Prerequisites
 
 - .NET 4.6.2
-- ATLAS 10
+- Appropriate [license](#licensing)
 
 ## Configuration
 
@@ -105,3 +105,23 @@ It does support backfill, but does not yet provide resampling, latency or covera
 Events are not yet supported.
 
 You cannot select subsets of parameters - this service streams everything. This is ideal for use cases centered on export and data movement, but less useful for model execution. -->
+
+## ATLAS Visualization
+
+You can setup an ATLAS Advanced Stream (AAS) recorder in ATLAS to view the live data from Kafka.
+
+In Tools > Options > Recorders > AAS Recorder, setup the AAS Recorder as follows (example below is for Kafka broker and [dependency service](./#dependencies-service.md) both running locally):
+
+![aas-recorder-config.png](./assets/aas-recorder-config.png)
+
+In ATLAS, add an AAS recorder from Session Browser:
+
+![add-aas-recorder.png](./assets/add-aas-recorder.png)
+
+The relevant topic should appear in the Recorder Editor's drop down ("sample_in" in this case):
+
+![aas-recorder-editor.png](./assets/aas-recorder-editor.png) 
+
+## Licensing
+
+ECU Bridge service requires a standalone "ECU Bridge" license, with a dependency on requiring an ATLAS Data Platform Site license. 

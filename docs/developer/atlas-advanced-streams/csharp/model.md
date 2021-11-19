@@ -6,12 +6,12 @@ A basic example of a model calculating the total horizontal acceleration paramet
 
 gTotal = |gLat| + |gLong|. 
 
-The sample includes two classes, [ModelSample](https://github.com/mat-docs/mtap-docs/tree/master/AAS/2020.1/csharp/src/MAT.OCS.Streaming.Samples/Samples/Models/ModelSample.cs) and [StreamModel](https://github.com/mat-docs/mtap-docs/tree/master/AAS/2020.1/csharp/src/MAT.OCS.Streaming.Samples/Samples/Models/StreamModel.cs)
+The sample includes two classes, [ModelSample](https://github.com/mat-docs/Atlas.AdvancedStreams.Examples/blob/main/MAT.OCS.Streaming.Samples/Samples/Models/ModelSample.cs) and [StreamModel](https://github.com/mat-docs/Atlas.AdvancedStreams.Examples/blob/main/MAT.OCS.Streaming.Samples/Samples/Models/StreamModel.cs)
 .
 ## Environment setup
 You need to prepare environment variables as follows:
 
-[Environment variables](https://github.com/mat-docs/mtap-docs/tree/master/AAS/2020.1/csharp/src/MAT.OCS.Streaming.Samples/Samples/Models/ModelSample.cs#L17-L20)
+[Environment variables](https://github.com/mat-docs/Atlas.AdvancedStreams.Examples/blob/main/MAT.OCS.Streaming.Samples/Samples/Models/ModelSample.cs#L17-L20)
 ```cs
 private const string DependencyUrl = "http://localhost:8180/api/dependencies/";
 private const string InputTopicName = "ModelsInput";
@@ -24,7 +24,7 @@ Before you start your model, create all the necessary topics using Topic managem
 ## Output format 
 Specify output data of the model and publish it to dependency service:
 
-[Output format](https://github.com/mat-docs/mtap-docs/tree/master/AAS/2020.1/csharp/src/MAT.OCS.Streaming.Samples/Samples/Models/ModelSample.cs#L37-L47)
+[Output format](https://github.com/mat-docs/Atlas.AdvancedStreams.Examples/blob/main/MAT.OCS.Streaming.Samples/Samples/Models/ModelSample.cs#L37-L47)
 ```cs
 var outputDataFormat = DataFormat.DefineFeed()
                             .Parameters(new List<string> { "gTotal:vTag" })
@@ -37,7 +37,7 @@ var atlasConfiguration = this.CreateAtlasConfiguration();
 this.atlasConfId = this.acClient.PutAndIdentifyAtlasConfiguration(atlasConfiguration);
 ```
 ## Subscribe
-[Subscribe](https://github.com/mat-docs/mtap-docs/tree/master/AAS/2020.1/csharp/src/MAT.OCS.Streaming.Samples/Samples/Models/ModelSample.cs#L49-L58) for input topic streams:
+[Subscribe](https://github.com/mat-docs/Atlas.AdvancedStreams.Examples/blob/main/MAT.OCS.Streaming.Samples/Samples/Models/ModelSample.cs#L49-L58) for input topic streams:
 
 ```cs
 using (var client = new KafkaStreamClient(BrokerList))
@@ -51,7 +51,7 @@ using (var pipeline = client.StreamTopic(InputTopicName).Into(streamId => this.C
 ```
 
 ## Into
-Each stream will raise callback [Into](https://github.com/mat-docs/mtap-docs/tree/master/AAS/2020.1/csharp/src/MAT.OCS.Streaming.Samples/Samples/Models/ModelSample.cs#L61-L66)() where a new instance of the model for the new stream is created.
+Each stream will raise callback [Into](https://github.com/mat-docs/Atlas.AdvancedStreams.Examples/blob/main/MAT.OCS.Streaming.Samples/Samples/Models/ModelSample.cs#L61-L66)() where a new instance of the model for the new stream is created.
 
 This block of code is called for each new stream. 
 
@@ -66,12 +66,12 @@ private IStreamInput CreateStreamPipeline(string streamId, IOutputTopic outputTo
 
 ## Stream model
 For each new stream, we create a instance of StreamModel class.
-[StreamModel](https://github.com/mat-docs/mtap-docs/tree/master/AAS/2020.1/csharp/src/MAT.OCS.Streaming.Samples/Samples/Models/StreamModel.cs)
+[StreamModel](https://github.com/mat-docs/Atlas.AdvancedStreams.Examples/blob/main/MAT.OCS.Streaming.Samples/Samples/Models/StreamModel.cs)
 
 ### Create stream input
 At the beginning of each stream, we create new stream input and output.
 
-[CreateStreamInput](https://github.com/mat-docs/mtap-docs/tree/master/AAS/2020.1/csharp/src/MAT.OCS.Streaming.Samples/Samples/Models/StreamModel.cs#L25-L51)
+[CreateStreamInput](https://github.com/mat-docs/Atlas.AdvancedStreams.Examples/blob/main/MAT.OCS.Streaming.Samples/Samples/Models/StreamModel.cs#L25-L51)
 
 ```cs
 public IStreamInput CreateStreamInput(string streamId)
@@ -101,7 +101,7 @@ public IStreamInput CreateStreamInput(string streamId)
 ```
 ### gTotal function
 In the callback, each bucket of data is calculated and the result is sent to the output topic.
-[gTotal ](https://github.com/mat-docs/mtap-docs/tree/master/AAS/2020.1/csharp/src/MAT.OCS.Streaming.Samples/Samples/Models/StreamModel.cs#L53-L85)
+[gTotal ](https://github.com/mat-docs/Atlas.AdvancedStreams.Examples/blob/main/MAT.OCS.Streaming.Samples/Samples/Models/StreamModel.cs#L53-L85)
 
 ```cs
 private void gTotalModel(object sender, TelemetryDataFeedEventArgs e)

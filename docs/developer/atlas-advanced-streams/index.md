@@ -12,7 +12,7 @@
     - [Streaming protocol](#streaming-protocol)
     - [Protobuf extension](#protobuf-extension)
 - [**Code Samples**](#code-samples)
-    - [C# samples](./csharp.md)
+    - [C# samples](csharp/README.md)
     <!-- - [Python samples](python/README.md) -->
   
 ## Concepts
@@ -62,7 +62,7 @@ Sinks could include:
 
 ATLAS Advanced Streams is designed to work as part of your infrastructure, rather than as interconnected desktop applications.
 
-Here is the overall picture:![atlas-advanced-streams.drawio](../../assets/diagrams/atlas-advanced-streams.drawio.png)
+Here is the overall picture:![atlas-advanced-streams.drawio](./assets/atlas-advanced-streams.drawio.png)
 
 Your code interacts with Kafka through a client library provided as Nuget package.
 
@@ -122,7 +122,7 @@ _Records streaming data into ATLAS 10._
 
 There is an ATLAS Advanced Streams "AAS recorder" included with ATLAS 10, which can be configured in _Tools > Options > Recorders > AAS Recorder_ 
 
-![aas-recorder-config.png](../../assets/screenshots/aas-recorder-config.png)
+![aas-recorder-config.png](./assets/aas-recorder-config.png)
 
 Configure the Dependencies Service client:
 - _Client type_: Service
@@ -498,7 +498,7 @@ Example:
 
 Notice the declaration of both  `dataFormat`  and  `atlasConfiguration`  dependencies. This is a minimum requirement to use the ATLAS 10 stream recorder.
 
-[session.schema.json](../../assets/aas/session.schema.json)
+[session.schema.json](./assets/session.schema.json)
 
 ##### tdata
 
@@ -539,7 +539,7 @@ Status values reflect results of data retrieval, and are defined as the followin
 These statuses provide detailed information for models that require it, but in general, all values are useful except when NaN.\
 See  [Data Feeds, Formats and Views](README.md#data-feeds-formats-and-views)  for information about the  `feed`  and  `format`  fields.
 
-[tdata.schema.json](../../assets/aas/tdata.schema.json)
+[tdata.schema.json](./assets/tdata.schema.json)
 
 ##### tsamples
 
@@ -577,7 +577,7 @@ Example:
 }
 ```
 
-[tsamples.schema.json](../../assets/aas/tsamples.schema.json)
+[tsamples.schema.json](./assets/tsamples.schema.json)
 
 #### events
 
@@ -599,7 +599,7 @@ Example:
 }
 ```
 
-[events.schema.json](../../assets/aas/events.schema.json)
+[events.schema.json](./assets/events.schema.json)
 
 ##### lap
 
@@ -629,7 +629,7 @@ Trigger sources include:
 These triggers give rise to business logic to describe the lap type, which is one of:  
 `fastLap`,  `pitLane`,  `outLap`, or  `inLap`. The exact business logic is outside the scope of this specification and may vary slightly by race formula.
 
-[lap.schema.json](../../assets/aas/lap.schema.json)
+[lap.schema.json](./assets/lap.schema.json)
 
 ##### sync
 
@@ -637,10 +637,10 @@ Sync messages create synchronization points across message types.
 
 See  [It's all about Time](#its-all-about-time)  for more information.
 
--   [lap.schema.json](../../assets/aas/lap.schema.json)
--   [session.schema.json](../../assets/aas/session.schema.json)
--   [tsamples.schema.json](../../assets/aas/tsamples.schema.json)
--   [tdata.schema.json](../../assets/aas/tdata.schema.json)
+-   [lap.schema.json](./assets/lap.schema.json)
+-   [session.schema.json](./assets/session.schema.json)
+-   [tsamples.schema.json](./assets/tsamples.schema.json)
+-   [tdata.schema.json](./assets/tdata.schema.json)
 
 ### Protobuf extension
 
@@ -670,4 +670,4 @@ Use the IDL (attached to this page) to generate a parser in a wide range of lang
 
 For more information, see  [https://developers.google.com/protocol-buffers/](https://developers.google.com/protocol-buffers/)
 
--   [protocol.proto](../../assets/aas/protocol.proto)
+-   [protocol.proto](./assets/protocol.proto)

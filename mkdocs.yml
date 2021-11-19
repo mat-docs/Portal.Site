@@ -39,7 +39,8 @@ nav:
         - DLLs:                     manual/functions/dlls.md
     - ECU Bridge:
         - Concepts:                 manual/ecu-bridge/concepts.md
-        - Dependencies:             manual/ecu-bridge/dependencies.md
+        - Dependencies Service:     manual/ecu-bridge/dependencies-service.md
+        - Topic Management Service: manual/ecu-bridge/topic-management-service.md
   - Developer Guide:
     - developer/index.md
     - NuGet:
