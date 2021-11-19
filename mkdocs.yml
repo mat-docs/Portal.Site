@@ -37,10 +37,6 @@ nav:
         - FDL Operators:            manual/functions/fdl-operators.md
         - Processors:               manual/functions/processors.md
         - DLLs:                     manual/functions/dlls.md
-    - ECU Bridge:
-        - Concepts:                 manual/ecu-bridge/concepts.md
-        - Dependencies Service:     manual/ecu-bridge/dependencies-service.md
-        - Topic Management Service: manual/ecu-bridge/topic-management-service.md
   - Developer Guide:
     - developer/index.md
     - NuGet:
@@ -49,7 +45,22 @@ nav:
     - SQL Race API:                 developer/sqlrace-api.md
     - 📘 ATLAS Display API:         developer/atlas-displayapi.md
     - ATLAS Advanced Streams:
-        - Concepts:                 developer/atlas-advanced-streams/index.md
+        - Concepts:         
+            - Design concepts:                     developer/atlas-advanced-streams/concepts/index.md
+            - Architecture overview:       
+                - Intro:                           developer/atlas-advanced-streams/concepts/architecture-overview/index.md
+                - Apache Kafka:                    developer/atlas-advanced-streams/concepts/architecture-overview/apache-kafka.md
+                - Topic Management Service:        developer/atlas-advanced-streams/concepts/architecture-overview/topic-management-service.md
+                - Dependencies Service:            developer/atlas-advanced-streams/concepts/architecture-overview/dependencies-service.md
+                - ECU Bridge:                      developer/atlas-advanced-streams/concepts/architecture-overview/ecu-bridge.md
+                - AAS Recorder:                    developer/atlas-advanced-streams/concepts/architecture-overview/aas-recorder.md    
+            - Topic, Streams & Sessions:           developer/atlas-advanced-streams/concepts/topic-streams-sessions.md
+            - It's all about Time:                 developer/atlas-advanced-streams/concepts/its-all-about-time.md
+            - Data feeds, formats & Views:         developer/atlas-advanced-streams/concepts/data-feeds-formats-views.md      
+            - ATLAS Configuration:                 developer/atlas-advanced-streams/concepts/atlas-config.md 
+        - Specifications:
+            - Streaming Protocol:   developer/atlas-advanced-streams/specifications/streaming-protocol.md
+            - Protobuf Extensions:  developer/atlas-advanced-streams/specifications/protobuf-extension.md
         - Code Samples (C&#35;):             
             - Intro:                developer/atlas-advanced-streams/csharp/README.md
             - Read:                 developer/atlas-advanced-streams/csharp/read.md

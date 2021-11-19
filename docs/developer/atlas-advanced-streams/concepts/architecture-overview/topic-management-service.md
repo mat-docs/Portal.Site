@@ -1,10 +1,16 @@
 # Topic Management Service
 
-Provides a REST API and a web user interface to set topics up for use with ATLAS Advanced Streams (AAS). The service is pre-configured for use with a local Kafka broker.
+_Front end to manage Kafka topics._
+
+Apache Kafka uses the concept of named, persistent topics – which can be browsed and configured for the desired data retention and scalability. 
+
+The Topic Management Service provides a REST API and a web user interface to set topics up for use with ATLAS Advanced Streams. 
+
+Of course, Kafka can be managed with command-line tools, but this service provides a convenient web front-end to create, edit and delete topics.
 
 ### Prerequisites
 
-- [Java 8 x64 or later](#Java-installation)
+- Java 8 x64 or later
 - Kafka 0.11 or later
 
 ### Installation

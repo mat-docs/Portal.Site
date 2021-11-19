@@ -1,9 +1,16 @@
 # Dependencies Service
 
-This is the service responsible for the storage and retrieval of data formats used in ATLAS Advanced Streams (AAS). It supports the storage of two forms of formats:
+_REST service containing schemas describing the streaming data._
+
+<!-- This is the service responsible for the storage and retrieval of data formats used in ATLAS Advanced Streams (AAS). It supports the storage of two forms of formats:
 
 - Data Formats for the parsing of AAS messages
-- Atlas Configuration to support rendering the content of the AAS messages
+- Atlas Configuration to support rendering the content of the AAS messages -->
+
+This microservice stores reference data off-stream. This improves efficiency, helps support late-joining streams, and time-based data expiry. 
+ATLAS Advanced Streams uses this service to describe topic parameter selection and ATLAS configuration – but it can be used for any reference data associated with a stream. 
+
+Think of this as equivalent to managing CFG and PGV files - it takes that job away from Kafka for simpler management.
 
 More details can be found in the [API Reference](https://mclarenappliedtechnologies.zendesk.com/knowledge/articles/115003531373/en-us?brand_id=1083465)
 

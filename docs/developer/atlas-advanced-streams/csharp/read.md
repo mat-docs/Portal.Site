@@ -1,6 +1,4 @@
-[TOC]
-
-## Basic samples of Read
+# Basic samples of Read
 The following chapters demonstrate the simple usage of Advanced Streams through basic samples, covering all the bare-minimum steps to implement Telematry Data, Telemetry Samples and Event **reads** from Kafka or Mqtt streams.
 The [full source code of the samples is here](https://github.com/mat-docs/Atlas.AdvancedStreams.Examples).
 
@@ -17,14 +15,14 @@ var client = new KafkaStreamClient(brokerList); // Create a new KafkaStreamClien
 var dataFormatClient = new DataFormatClient(new HttpDependencyClient(dependencyServiceUri, groupName)); // Create a new DataFormatClient
 ```
 
-The [DependencyService](https://mclarenappliedtechnologies.zendesk.com/hc/en-us/articles/115003531373-API-Reference-Dependencies-Service) is used to handle requests for [AtlasConfigurations](../index.md#atlas-configuration) and [DataFormats](../index.md#data-feeds-formats-and-views). You must provide an URI for this service. 
+The [DependencyService](https://mclarenappliedtechnologies.zendesk.com/hc/en-us/articles/115003531373-API-Reference-Dependencies-Service) is used to handle requests for [AtlasConfigurations](../concepts/atlas-config.md) and [DataFormats](../concepts/data-feeds-formats-views.md). You must provide an URI for this service. 
 The DataFormatClient handles the data formats through the [DependencyService](https://mclarenappliedtechnologies.zendesk.com/hc/en-us/articles/115003531373-API-Reference-Dependencies-Service) for the given group name.
 
 If you want to connect to MQTT, create a client of MqttStreamClient instead of KafkaStreamClient:
 ```cs
 var client = new MqttStreamClient(new MqttConnectionConfig(brokerList, "userName", "password"));
 ```
-Read more about [Topics, Streams and Sessions here](../index.md#topics-streams-and-sessions).
+Read more about [Topics, Streams and Sessions here](../concepts/data-feeds-formats-views.md#topics-streams-and-sessions).
 
 ### Stream pipeline
 
@@ -189,9 +187,9 @@ input.DataInput.BindDefaultFeed(ParameterId).DataBuffered += (sender, e) => // B
 };
 ```
 
-Read more about [Data Feeds, Formats, and Views here](../index.md#data-feeds-formats-and-views).
+Read more about [Data Feeds, Formats, and Views here](../concepts/data-feeds-formats-views.md).
 
-Read more about [TData here](../index.md#tdata).
+Read more about [TData here](../concepts/data-feeds-formats-views.md/#tdata).
 
 ### Telemetry Samples
 In this example we [bind the **SamplesInput** to the handler method](https://github.com/mat-docs/Atlas.AdvancedStreams.Examples/tree/main/MAT.OCS.Streaming.Samples/Samples/Basic/TSamples.cs#L77) and simply [print out some details](https://github.com/mat-docs/Atlas.AdvancedStreams.Examples/tree/main/MAT.OCS.Streaming.Samples/Samples/Basic/TSamples.cs#L78-L82) 
@@ -204,7 +202,7 @@ input.SamplesInput.AutoBindFeeds((s, e) => // Take the input and bind feed to an
 });
 ```
 
-Read more about [TSamples here](../index.md#tsamples).
+Read more about [TSamples here](../concepts/data-feeds-formats-views.md#tsamples).
 
 ### Events
 
@@ -236,7 +234,7 @@ input.EventsInput.EventsBuffered += (sender, e) => // Subscribe to incoming even
 
 Notice that we are [querying the Atlas configuration dependency](https://github.com/mat-docs/Atlas.AdvancedStreams.Examples/tree/main/MAT.OCS.Streaming.Samples/Samples/Basic/EventsRead.cs#L57) for event details. These details include properties like `Description`, `Priority`. You must [subscribe to session dependencies change](https://github.com/mat-docs/Atlas.AdvancedStreams.Examples/tree/main/MAT.OCS.Streaming.Samples/Samples/Basic/EventsRead.cs#L35-L43) to get this Atlas configuration dependency.
 
-Read more about [Events here](../index.md#events).
+Read more about [Events here](../concepts/data-feeds-formats-views.md#events).
 
 ### Waits for completion
 In order to successfully read and consume the stream, make sure to [wait until connected](https://github.com/mat-docs/Atlas.AdvancedStreams.Examples/tree/main/MAT.OCS.Streaming.Samples/Samples/Basic/TData.cs#L92-L93) and [wait for the first stream](https://github.com/mat-docs/Atlas.AdvancedStreams.Examples/tree/main/MAT.OCS.Streaming.Samples/Samples/Basic/TData.cs#L94). Optionally you can tell the pipeline to wait for a specific time [while the stream is being idle](https://github.com/mat-docs/Atlas.AdvancedStreams.Examples/tree/main/MAT.OCS.Streaming.Samples/Samples/Basic/TData.cs#L95), before exiting from the process.

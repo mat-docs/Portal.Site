@@ -1,14 +1,12 @@
-[TOC]
-
 # Advanced Samples
 
 Advanced samples cover the usual use cases for reading, writing and reading and linking telemetry data in an structured and organized code.
-According to that each sample .cs file has a Write(), Read() and ReadAndLink() methods and all of the sample files rely on the same structure. You can use them as working samples copying to your application code.
+According to that each sample .cs file has a `Write()`, `Read()` and `ReadAndLink()` methods and all of the sample files rely on the same structure. You can use them as working samples copying to your application code.
 The .cs files in the [Samples folder](https://github.com/mat-docs/Atlas.AdvancedStreams.Examples/tree/main/MAT.OCS.Streaming.Samples/Samples) have documenting and descriptive comments, but lets take a look at a simple and a more complex sample in depth.
 
 ## Writing Telemetry Data with a parameter and default feed name to a Kafka topic.
 
-First of all you need to create or use an [AtlasConfiguration](https://github.com/mat-docs/Atlas.AdvancedStreams.Examples/tree/main/MAT.OCS.Streaming.Samples/Samples/Advanced/TDataSingleFeedSingleParameter.cs#L27-L53). You need to set the [details](https://github.com/mat-docs/Atlas.AdvancedStreams.Examples/tree/main/MAT.OCS.Streaming.Samples/Samples/Advanced/TDataSingleFeedSingleParameter.cs#L13-L22) what AppGroupId, ParameterGroupId, ParameterID you want to use.
+First of all you need to create or use an [AtlasConfiguration](https://github.com/mat-docs/Atlas.AdvancedStreams.Examples/tree/main/MAT.OCS.Streaming.Samples/Samples/Advanced/TDataSingleFeedSingleParameter.cs#L27-L53). You need to set the [details](https://github.com/mat-docs/Atlas.AdvancedStreams.Examples/tree/main/MAT.OCS.Streaming.Samples/Samples/Advanced/TDataSingleFeedSingleParameter.cs#L13-L22) what `AppGroupId`, `ParameterGroupId`, `ParameterID` you want to use.
 
 Once you have your AtlasConfiguration design, you need to set [details](https://github.com/mat-docs/Atlas.AdvancedStreams.Examples/tree/main/MAT.OCS.Streaming.Samples/Samples/Advanced/TDataSingleFeedSingleParameter.cs#L117-L120) for the DependencyService URI, the stream broker address, the group name and the output topic name where you want to write. 
 The DependencyService is used to handle requests for AtlasConfigurations and DataFormats, you must provide an URI for this service. 

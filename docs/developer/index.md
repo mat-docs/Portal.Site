@@ -20,9 +20,9 @@ Get the libraries from our [GitHub packages feed](nuget/index.md).
     * _Tutorials with Code Samples_
     * _API Reference_
 
-[Streaming Data in and out of the ATLAS ecosystem using ATLAS Advanced Streams](atlas-advanced-streams/index.md)
+[Streaming Data in and out of the ATLAS ecosystem using ATLAS Advanced Streams](atlas-advanced-streams/concepts/index.md)
 :   _Detailed documentation, including:_
 
     * _Concepts_
-    * _Specification_
-    * _Code Samples_
+    * _Specifications_
+    * _Tutorials with Code Samples_

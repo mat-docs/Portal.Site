@@ -1,5 +1,3 @@
-[TOC]
-
 # Introduction
 This API provides infrastructure for streaming data around the ATLAS technology platform.
 
@@ -20,5 +18,5 @@ You need to install the following Nuget packages from MAT source
 
 - MAT.OCS.Streaming
 - MAT.OCS.Streaming.Kafka
-<!-- - MAT.OCS.Streaming.Mqtt -->
 - MAT.OCS.Streaming.Codecs.Protobuf
+<!-- - MAT.OCS.Streaming.Mqtt -->
