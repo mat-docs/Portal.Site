@@ -40,6 +40,7 @@ nav:
     - ECU Bridge:
       - Design Concept:                   manual/ecu-bridge/design-concept.md
       - Introduction:
+          - Architecture Overview:        manual/ecu-bridge/introduction.md
           - Dependencies Service:         manual/ecu-bridge/dependencies-service.md
           - Message Broker:
               - Apache Kafka:             manual/ecu-bridge/apache-kafka.md
