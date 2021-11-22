@@ -12,7 +12,7 @@ ATLAS Advanced Streams uses this service to describe topic parameter selection a
 
 Think of this as equivalent to managing CFG and PGV files - it takes that job away from Kafka for simpler management.
 
-More details can be found in the [API Reference](https://mclarenappliedtechnologies.zendesk.com/knowledge/articles/115003531373/en-us?brand_id=1083465)
+More details can be found in the [API Reference](https://mclarenappliedtechnologies.zendesk.com/hc/en-us/articles/115003531373-API-Reference-Dependencies-Service)
 
 ### Prerequisites
 
@@ -37,7 +37,7 @@ Requests against the dependency service include two white-listed elemetns:
 
 Extend these options as necessary after deployment. 
 
-Refer to [API Reference - Dependencies Service](https://mclarenappliedtechnologies.zendesk.com/knowledge/articles/115003531373/en-us?brand_id=1083465)
+Refer to [API Reference - Dependencies Service](https://mclarenappliedtechnologies.zendesk.com/hc/en-us/articles/115003531373-API-Reference-Dependencies-Service)
 
 ### Verification
 
