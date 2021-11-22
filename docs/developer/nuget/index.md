@@ -52,7 +52,7 @@ A free [GitHub](https://github.com/) account is required.
 :   Pre-compiled gRPC clients for the RTA Toolkit Services;  
     Supports .NET Standard 2.1 and .NET 5.0
 
-## ATLAS Advanced Streams
+## ATLAS Streaming
 
 **MAT.OCS.Streaming**
 :   Streaming telemetry client compatible with the ATLAS technology platform

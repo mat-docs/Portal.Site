@@ -37,6 +37,16 @@ nav:
         - FDL Operators:            manual/functions/fdl-operators.md
         - Processors:               manual/functions/processors.md
         - DLLs:                     manual/functions/dlls.md
+    - ECU Bridge:
+      - Design Concept:                   manual/ecu-bridge/design-concept.md
+      - Introduction:
+          - Dependencies Service:         manual/ecu-bridge/dependencies-service.md
+          - Message Broker:
+              - Apache Kafka:             manual/ecu-bridge/apache-kafka.md
+              - Topic Management Service: manual/ecu-bridge/topic-management-service.md
+          - ATLAS Visualisation:          manual/ecu-bridge/atlas-visualisation.md
+          - Licensing:                    manual/ecu-bridge/licensing.md
+      - Configuration:                    manual/ecu-bridge/configuration.md
   - Developer Guide:
     - developer/index.md
     - NuGet:
@@ -44,29 +54,21 @@ nav:
       - Feed Setup:                 developer/nuget/setup.md
     - SQL Race API:                 developer/sqlrace-api.md
     - 📘 ATLAS Display API:         developer/atlas-displayapi.md
-    - ATLAS Advanced Streams:
-        - Concepts:         
-            - Design concepts:                     developer/atlas-advanced-streams/concepts/index.md
-            - Architecture overview:       
-                - Intro:                           developer/atlas-advanced-streams/concepts/architecture-overview/index.md
-                - Apache Kafka:                    developer/atlas-advanced-streams/concepts/architecture-overview/apache-kafka.md
-                - Topic Management Service:        developer/atlas-advanced-streams/concepts/architecture-overview/topic-management-service.md
-                - Dependencies Service:            developer/atlas-advanced-streams/concepts/architecture-overview/dependencies-service.md
-                - ECU Bridge:                      developer/atlas-advanced-streams/concepts/architecture-overview/ecu-bridge.md
-                - AAS Recorder:                    developer/atlas-advanced-streams/concepts/architecture-overview/aas-recorder.md    
-            - Topic, Streams & Sessions:           developer/atlas-advanced-streams/concepts/topic-streams-sessions.md
-            - It's all about Time:                 developer/atlas-advanced-streams/concepts/its-all-about-time.md
-            - Data feeds, formats & Views:         developer/atlas-advanced-streams/concepts/data-feeds-formats-views.md      
-            - ATLAS Configuration:                 developer/atlas-advanced-streams/concepts/atlas-config.md 
+    - ECu Bridge:
+        - Concepts:             
+            - Topic, Streams & Sessions:           developer/ecu-bridge/concepts/topic-streams-sessions.md
+            - It's all about Time:                 developer/ecu-bridge/concepts/its-all-about-time.md
+            - Data feeds, formats & Views:         developer/ecu-bridge/concepts/data-feeds-formats-views.md      
+            - ATLAS Configuration:                 developer/ecu-bridge/concepts/atlas-config.md 
         - Specifications:
-            - Streaming Protocol:   developer/atlas-advanced-streams/specifications/streaming-protocol.md
-            - Protobuf Extensions:  developer/atlas-advanced-streams/specifications/protobuf-extension.md
+            - Streaming Protocol:   developer/ecu-bridge/specifications/streaming-protocol.md
+            - Protobuf Extensions:  developer/ecu-bridge/specifications/protobuf-extension.md
         - Code Samples (C&#35;):             
-            - Intro:                developer/atlas-advanced-streams/csharp/README.md
-            - Read:                 developer/atlas-advanced-streams/csharp/read.md
-            - Write:                developer/atlas-advanced-streams/csharp/write.md
-            - Model Execution:      developer/atlas-advanced-streams/csharp/model.md
-            - Advanced Samples:     developer/atlas-advanced-streams/csharp/advanced.md
+            - Intro:                developer/ecu-bridge/csharp/README.md
+            - Read:                 developer/ecu-bridge/csharp/read.md
+            - Write:                developer/ecu-bridge/csharp/write.md
+            - Model Execution:      developer/ecu-bridge/csharp/model.md
+            - Advanced Samples:     developer/ecu-bridge/csharp/advanced.md
   - 📙 Integration Guide:           integration/index.md
   - Downloads:
     - downloads/index.md
