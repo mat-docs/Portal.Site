@@ -1,5 +1,5 @@
 # ATLAS Documentation Portal
-Public DNS: _docs.atlas.mclarenapplied.com_  
+Public DNS: _atlas.mclarenapplied.com_  
 Netlify hosting: _mclaren-atlas-docs.netlify.app_
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/cfd0eb9e-0c60-479f-863a-5b63057c7881/deploy-status)](https://app.netlify.com/sites/mclaren-atlas-docs/deploys)

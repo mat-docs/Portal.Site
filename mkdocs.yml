@@ -1,7 +1,7 @@
 site_name: 'ATLAS Platform Documentation Portal'
 site_description: 'F1-grade engineering telemetry tooling'
 docs_dir: 'docs'
-site_url: https://docs.atlas.mclarenapplied.com/
+site_url: https://atlas.mclarenapplied.com/
 
 theme:
   name: 'material'
