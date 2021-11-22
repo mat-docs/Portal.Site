@@ -34,8 +34,11 @@
 
 ### ECU Bridge
 
-[Concepts](ecu-bridge/concepts)
-:   _Concept and architecture overview_
+[Concepts](ecu-bridge/design-concept.md)
+:   _Design concepts_
 
-[Dependencies](ecu-bridge/dependencies)
+[Introduction](ecu-bridge/introduction.md)
 :   _Description of the services used by ECU Bridge_
+
+[Configuration](ecu-bridge/configuration.md)
+:   _How to setup ECU Bridge_
