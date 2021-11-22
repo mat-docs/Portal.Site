@@ -11,7 +11,7 @@ With support for Apache Kafka, the streaming API also offers:
 - Replay of historic streams
 - Fault-tolerant, scalable broker architecture
 
-The [full source code of the samples is on GitHub](https://github.com/mat-docs/Atlas.AdvancedStreams.Examples).
+The [full source code of the samples is on GitHub](https://github.com/mat-docs/MAT.OCS.Streaming.Samples).
 
 # Requirements
 You need to install the following Nuget packages from MAT source

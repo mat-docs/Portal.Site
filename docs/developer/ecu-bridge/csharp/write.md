@@ -2,7 +2,7 @@
 The following chapters demonstrate the simple usage of Advanced Streams through basic samples, covering all the bare-minimum steps to implement Telematry Data, Telemetry Samples and Event **write** to Kafka or Mqtt streams.\
 The [full source code of the samples is here](./src).
 
-First of all you need to configure the [dependencies](https://github.com/mat-docs/Atlas.AdvancedStreams.Examples/blob/main/MAT.OCS.Streaming.Samples/Samples/Basic/TData.cs#L102-L113)
+First of all you need to configure the [dependencies](https://github.com/mat-docs/MAT.OCS.Streaming.Samples/blob/main/MAT.OCS.Streaming.Samples/Samples/Basic/TData.cs#L102-L113)
 ```cs
 const string brokerList = "localhost:9092"; // The host and port where the Kafka broker is running
 const string groupName = "dev"; // The group name
@@ -59,14 +59,14 @@ sslConfigurationDetails.Add("ssl.key.password", "password");
 var client = new KafkaStreamClient(brokerList, sslConfigurationDetails); // Create a new KafkaStreamClient for connecting to Kafka broker, using SSL connection details
 ```
 
-[Open the output topic](https://github.com/mat-docs/Atlas.AdvancedStreams.Examples/tree/main/MAT.OCS.Streaming.Samples/Samples/Basic/TData.cs#L115) using the preferred client (KafkaStreamClient or MqttStreamClient) and the topicName.
+[Open the output topic](https://github.com/mat-docs/MAT.OCS.Streaming.Samples/tree/main/MAT.OCS.Streaming.Samples/Samples/Basic/TData.cs#L115) using the preferred client (KafkaStreamClient or MqttStreamClient) and the topicName.
 ```cs
 using (var outputTopic = client.OpenOutputTopic(topicName)) // Open a KafkaOutputTopic
 {
 }
 ```
 
-[Create a SessionTelemetryDataOutput](https://github.com/mat-docs/Atlas.AdvancedStreams.Examples/tree/main/MAT.OCS.Streaming.Samples/Samples/Basic/TData.cs#L118) and configure session output [properties](https://github.com/mat-docs/Atlas.AdvancedStreams.Examples/tree/main/MAT.OCS.Streaming.Samples/Samples/Basic/TData.cs#L118-L125).
+[Create a SessionTelemetryDataOutput](https://github.com/mat-docs/MAT.OCS.Streaming.Samples/tree/main/MAT.OCS.Streaming.Samples/Samples/Basic/TData.cs#L118) and configure session output [properties](https://github.com/mat-docs/MAT.OCS.Streaming.Samples/tree/main/MAT.OCS.Streaming.Samples/Samples/Basic/TData.cs#L118-L125).
 ```cs
 var output = new SessionTelemetryDataOutput(outputTopic, dataFormatId, dataFormatClient);
 output.SessionOutput.AddSessionDependency(DependencyTypes.DataFormat, dataFormatId); // Add session dependencies to the output
@@ -79,60 +79,60 @@ output.SessionOutput.SessionIdentifier = "data_" + DateTime.Now; // set a custom
 
 You must add dataFormatId and atlasConfigurationId to session dependencies to be able to use them during the streaming session.
 
-Once it is done, [send the session](https://github.com/mat-docs/Atlas.AdvancedStreams.Examples/tree/main/MAT.OCS.Streaming.Samples/Samples/Basic/TData.cs#L126) details to the output.
+Once it is done, [send the session](https://github.com/mat-docs/MAT.OCS.Streaming.Samples/tree/main/MAT.OCS.Streaming.Samples/Samples/Basic/TData.cs#L126) details to the output.
 ```cs
 output.SessionOutput.SendSession();
 ```
 
 
 ### Telemetry Data
-You will need **TelemetryData** to write to the output. In this example we [generate some random telemetry data](https://github.com/mat-docs/Atlas.AdvancedStreams.Examples/tree/main/MAT.OCS.Streaming.Samples/Samples/Basic/TData.cs#L128) for the purpose of demonstration.
+You will need **TelemetryData** to write to the output. In this example we [generate some random telemetry data](https://github.com/mat-docs/MAT.OCS.Streaming.Samples/tree/main/MAT.OCS.Streaming.Samples/Samples/Basic/TData.cs#L128) for the purpose of demonstration.
 ```cs
 var telemetryData = GenerateData(10, (DateTime)output.SessionOutput.SessionStart); // Generate some telemetry data
 ```
 
-[Bind the feed to **DataOutput**](https://github.com/mat-docs/Atlas.AdvancedStreams.Examples/tree/main/MAT.OCS.Streaming.Samples/Samples/Basic/TData.cs#L130-L131) by its name. You can use the default feedname or use a custom one.
+[Bind the feed to **DataOutput**](https://github.com/mat-docs/MAT.OCS.Streaming.Samples/tree/main/MAT.OCS.Streaming.Samples/Samples/Basic/TData.cs#L130-L131) by its name. You can use the default feedname or use a custom one.
 ```cs
 const string feedName = ""; // As sample DataFormat uses default feed, we will leave this empty.
 var outputFeed = output.DataOutput.BindFeed(feedName); // bind your feed by its name to the Data Output
 ```
 
-[Enqueue and send](https://github.com/mat-docs/Atlas.AdvancedStreams.Examples/tree/main/MAT.OCS.Streaming.Samples/Samples/Basic/TData.cs#L133) the telemetry data.
+[Enqueue and send](https://github.com/mat-docs/MAT.OCS.Streaming.Samples/tree/main/MAT.OCS.Streaming.Samples/Samples/Basic/TData.cs#L133) the telemetry data.
 ```cs
 Task.WaitAll(outputFeed.EnqueueAndSendData(telemetryData)); // enqueue and send the data to the output through the outputFeed
 ```
 
 ### Telemetry Samples
-You will need **TelemetrySamples** to write to the output. In this example we [generate some random telemetry samples](https://github.com/mat-docs/Atlas.AdvancedStreams.Examples/tree/main/MAT.OCS.Streaming.Samples/Samples/Basic/TSamples.cs#L125) for the purpose of demonstration.
+You will need **TelemetrySamples** to write to the output. In this example we [generate some random telemetry samples](https://github.com/mat-docs/MAT.OCS.Streaming.Samples/tree/main/MAT.OCS.Streaming.Samples/Samples/Basic/TSamples.cs#L125) for the purpose of demonstration.
 ```cs
 var telemetrySamples = GenerateSamples(10, (DateTime)output.SessionOutput.SessionStart); // Generate some telemetry samples
 ```
 
-[Bind the feed to **SamplesOutput**](https://github.com/mat-docs/Atlas.AdvancedStreams.Examples/tree/main/MAT.OCS.Streaming.Samples/Samples/Basic/TSamples.cs#L127-L128) by its name. You can use the default feedname or use a custom one.
+[Bind the feed to **SamplesOutput**](https://github.com/mat-docs/MAT.OCS.Streaming.Samples/tree/main/MAT.OCS.Streaming.Samples/Samples/Basic/TSamples.cs#L127-L128) by its name. You can use the default feedname or use a custom one.
 ```cs
 const string feedName = ""; // As sample DataFormat uses default feed, we will leave this empty.
 var outputFeed = output.SamplesOutput.BindFeed(feedName); // bind your feed by its name to the SamplesOutput
 ```
 
-[Send Samples](https://github.com/mat-docs/Atlas.AdvancedStreams.Examples/tree/main/MAT.OCS.Streaming.Samples/Samples/Basic/TSamples.cs#L130).
+[Send Samples](https://github.com/mat-docs/MAT.OCS.Streaming.Samples/tree/main/MAT.OCS.Streaming.Samples/Samples/Basic/TSamples.cs#L130).
 ```cs
 Task.WaitAll(outputFeed.SendSamples(telemetrySamples)); // send the samples to the output through the outputFeed
 ```
 
 ### Events
-You will need **Events** to write to the output. In this example we [generate some random event samples](https://github.com/mat-docs/Atlas.AdvancedStreams.Examples/tree/main/MAT.OCS.Streaming.Samples/Samples/Basic/EventsWrite.cs#L67) for the purpose of demonstration.
+You will need **Events** to write to the output. In this example we [generate some random event samples](https://github.com/mat-docs/MAT.OCS.Streaming.Samples/tree/main/MAT.OCS.Streaming.Samples/Samples/Basic/EventsWrite.cs#L67) for the purpose of demonstration.
 ```cs
 var events = GenerateEvents(20, (DateTime)output.SessionOutput.SessionStart); // Generate some events data
 ```
 
-Then you can just [send the events using `SendEvent` method on **EventsOuput**](https://github.com/mat-docs/Atlas.AdvancedStreams.Examples/tree/main/MAT.OCS.Streaming.Samples/Samples/Basic/EventsWrite.cs#L68).
+Then you can just [send the events using `SendEvent` method on **EventsOuput**](https://github.com/mat-docs/MAT.OCS.Streaming.Samples/tree/main/MAT.OCS.Streaming.Samples/Samples/Basic/EventsWrite.cs#L68).
 ```cs
 var tasks = events.Select(ev => output.EventsOutput.SendEvent(ev)).ToArray(); // enqueue and send the events to the output through the EventsOutput
 ```
 
 ### Closing session
 
-Once you sent all your data, don't forget to [set the session state to closed](https://github.com/mat-docs/Atlas.AdvancedStreams.Examples/tree/main/MAT.OCS.Streaming.Samples/Samples/Basic/TData.cs#L135) and [send the session details](https://github.com/mat-docs/Atlas.AdvancedStreams.Examples/tree/main/MAT.OCS.Streaming.Samples/Samples/Basic/TData.cs#L136).
+Once you sent all your data, don't forget to [set the session state to closed](https://github.com/mat-docs/MAT.OCS.Streaming.Samples/tree/main/MAT.OCS.Streaming.Samples/Samples/Basic/TData.cs#L135) and [send the session details](https://github.com/mat-docs/MAT.OCS.Streaming.Samples/tree/main/MAT.OCS.Streaming.Samples/Samples/Basic/TData.cs#L136).
 ```cs
 output.SessionOutput.SessionState = StreamSessionState.Closed; // set session state to closed. In case of any unintended session close, set state to Truncated
 output.SessionOutput.SendSession(); // send session

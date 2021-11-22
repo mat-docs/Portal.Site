@@ -1,10 +1,10 @@
 # Basic samples of Read
 The following chapters demonstrate the simple usage of Advanced Streams through basic samples, covering all the bare-minimum steps to implement Telematry Data, Telemetry Samples and Event **reads** from Kafka or Mqtt streams.
-The [full source code of the samples is here](https://github.com/mat-docs/Atlas.AdvancedStreams.Examples).
+The [full source code of the samples is here](https://github.com/mat-docs/MAT.OCS.Streaming.Samples).
 
 ### Configurations and dependencies
 
-First of all you need to configure the [dependencies](https://github.com/mat-docs/Atlas.AdvancedStreams.Examples/tree/main/MAT.OCS.Streaming.Samples/Samples/Basic/TData.cs#L60-L63)
+First of all you need to configure the [dependencies](https://github.com/mat-docs/MAT.OCS.Streaming.Samples/tree/main/MAT.OCS.Streaming.Samples/Samples/Basic/TData.cs#L60-L63)
 ```cs
 const string brokerList = "localhost:9092"; // The host and port where the Kafka broker is running
 const string groupName = "dev"; // The group name
@@ -28,7 +28,7 @@ Read more about [Topics, Streams and Sessions here](../concepts/data-feeds-forma
 
 ### Stream pipeline
 
-Create a stream pipeline using the KafkaStreamClient and the topicName. Stream the messages [.Into your handler method](https://github.com/mat-docs/Atlas.AdvancedStreams.Examples/tree/main/MAT.OCS.Streaming.Samples/Samples/Basic/TData.cs#L68)
+Create a stream pipeline using the KafkaStreamClient and the topicName. Stream the messages [.Into your handler method](https://github.com/mat-docs/MAT.OCS.Streaming.Samples/tree/main/MAT.OCS.Streaming.Samples/Samples/Basic/TData.cs#L68)
 ```cs
 var pipeline = client.StreamTopic(topicName).Into(streamId => // Stream Kafka topic into the handler method
 ```
@@ -161,13 +161,13 @@ As the pipeline runs on a separate thread, the exceptions may occur are not bein
 You can check for errors through the *IsFaulted* status. In case of exception this would be stored in the pipelines *Exception* property.
 
 ### Stream session input
-[Create a SessionTelemetryDataInput](https://github.com/mat-docs/Atlas.AdvancedStreams.Examples/tree/main/MAT.OCS.Streaming.Samples/Samples/Basic/TData.cs#L70) with the actual stream id and the dataFormatClient 
+[Create a SessionTelemetryDataInput](https://github.com/mat-docs/MAT.OCS.Streaming.Samples/tree/main/MAT.OCS.Streaming.Samples/Samples/Basic/TData.cs#L70) with the actual stream id and the dataFormatClient 
 ```cs
 var input = new SessionTelemetryDataInput(streamId, dataFormatClient);
 ```
 
 ### Telemetry Data
-In this example we [bind the **DataInput** to the handler method](https://github.com/mat-docs/Atlas.AdvancedStreams.Examples/tree/main/MAT.OCS.Streaming.Samples/Samples/Basic/TData.cs#L71) using the default feed and simply [print out some details](https://github.com/mat-docs/Atlas.AdvancedStreams.Examples/tree/main/MAT.OCS.Streaming.Samples/Samples/Basic/TData.cs#L72-L86) about the incoming data.
+In this example we [bind the **DataInput** to the handler method](https://github.com/mat-docs/MAT.OCS.Streaming.Samples/tree/main/MAT.OCS.Streaming.Samples/Samples/Basic/TData.cs#L71) using the default feed and simply [print out some details](https://github.com/mat-docs/MAT.OCS.Streaming.Samples/tree/main/MAT.OCS.Streaming.Samples/Samples/Basic/TData.cs#L72-L86) about the incoming data.
 ```cs
 input.DataInput.BindDefaultFeed(ParameterId).DataBuffered += (sender, e) => // Bind the incoming feed and take the data
 {
@@ -192,7 +192,7 @@ Read more about [Data Feeds, Formats, and Views here](../concepts/data-feeds-for
 Read more about [TData here](../concepts/data-feeds-formats-views.md/#tdata).
 
 ### Telemetry Samples
-In this example we [bind the **SamplesInput** to the handler method](https://github.com/mat-docs/Atlas.AdvancedStreams.Examples/tree/main/MAT.OCS.Streaming.Samples/Samples/Basic/TSamples.cs#L77) and simply [print out some details](https://github.com/mat-docs/Atlas.AdvancedStreams.Examples/tree/main/MAT.OCS.Streaming.Samples/Samples/Basic/TSamples.cs#L78-L82) 
+In this example we [bind the **SamplesInput** to the handler method](https://github.com/mat-docs/MAT.OCS.Streaming.Samples/tree/main/MAT.OCS.Streaming.Samples/Samples/Basic/TSamples.cs#L77) and simply [print out some details](https://github.com/mat-docs/MAT.OCS.Streaming.Samples/tree/main/MAT.OCS.Streaming.Samples/Samples/Basic/TSamples.cs#L78-L82) 
 ```cs
 input.SamplesInput.AutoBindFeeds((s, e) => // Take the input and bind feed to an event handler
 {
@@ -206,7 +206,7 @@ Read more about [TSamples here](../concepts/data-feeds-formats-views.md#tsamples
 
 ### Events
 
-In this example we [subscribe to **EventsInput** with a handler method](https://github.com/mat-docs/Atlas.AdvancedStreams.Examples/tree/main/MAT.OCS.Streaming.Samples/Samples/Basic/EventsRead.cs#L45) and simply [print out some details of each event received](https://github.com/mat-docs/Atlas.AdvancedStreams.Examples/tree/main/MAT.OCS.Streaming.Samples/Samples/Basic/EventsRead.cs#L52-L63).
+In this example we [subscribe to **EventsInput** with a handler method](https://github.com/mat-docs/MAT.OCS.Streaming.Samples/tree/main/MAT.OCS.Streaming.Samples/Samples/Basic/EventsRead.cs#L45) and simply [print out some details of each event received](https://github.com/mat-docs/MAT.OCS.Streaming.Samples/tree/main/MAT.OCS.Streaming.Samples/Samples/Basic/EventsRead.cs#L52-L63).
 
 ```cs
 input.EventsInput.EventsBuffered += (sender, e) => // Subscribe to incoming events
@@ -232,12 +232,12 @@ input.EventsInput.EventsBuffered += (sender, e) => // Subscribe to incoming even
 };
 ```
 
-Notice that we are [querying the Atlas configuration dependency](https://github.com/mat-docs/Atlas.AdvancedStreams.Examples/tree/main/MAT.OCS.Streaming.Samples/Samples/Basic/EventsRead.cs#L57) for event details. These details include properties like `Description`, `Priority`. You must [subscribe to session dependencies change](https://github.com/mat-docs/Atlas.AdvancedStreams.Examples/tree/main/MAT.OCS.Streaming.Samples/Samples/Basic/EventsRead.cs#L35-L43) to get this Atlas configuration dependency.
+Notice that we are [querying the Atlas configuration dependency](https://github.com/mat-docs/MAT.OCS.Streaming.Samples/tree/main/MAT.OCS.Streaming.Samples/Samples/Basic/EventsRead.cs#L57) for event details. These details include properties like `Description`, `Priority`. You must [subscribe to session dependencies change](https://github.com/mat-docs/MAT.OCS.Streaming.Samples/tree/main/MAT.OCS.Streaming.Samples/Samples/Basic/EventsRead.cs#L35-L43) to get this Atlas configuration dependency.
 
 Read more about [Events here](../concepts/data-feeds-formats-views.md#events).
 
 ### Waits for completion
-In order to successfully read and consume the stream, make sure to [wait until connected](https://github.com/mat-docs/Atlas.AdvancedStreams.Examples/tree/main/MAT.OCS.Streaming.Samples/Samples/Basic/TData.cs#L92-L93) and [wait for the first stream](https://github.com/mat-docs/Atlas.AdvancedStreams.Examples/tree/main/MAT.OCS.Streaming.Samples/Samples/Basic/TData.cs#L94). Optionally you can tell the pipeline to wait for a specific time [while the stream is being idle](https://github.com/mat-docs/Atlas.AdvancedStreams.Examples/tree/main/MAT.OCS.Streaming.Samples/Samples/Basic/TData.cs#L95), before exiting from the process.
+In order to successfully read and consume the stream, make sure to [wait until connected](https://github.com/mat-docs/MAT.OCS.Streaming.Samples/tree/main/MAT.OCS.Streaming.Samples/Samples/Basic/TData.cs#L92-L93) and [wait for the first stream](https://github.com/mat-docs/MAT.OCS.Streaming.Samples/tree/main/MAT.OCS.Streaming.Samples/Samples/Basic/TData.cs#L94). Optionally you can tell the pipeline to wait for a specific time [while the stream is being idle](https://github.com/mat-docs/MAT.OCS.Streaming.Samples/tree/main/MAT.OCS.Streaming.Samples/Samples/Basic/TData.cs#L95), before exiting from the process.
 ```cs
 if (!pipeline.WaitUntilConnected(TimeSpan.FromSeconds(30), CancellationToken.None)) // Wait until the connection is established
      throw new Exception("Couldn't connect");
@@ -245,7 +245,7 @@ pipeline.WaitUntilFirstStream(TimeSpan.FromMinutes(1), CancellationToken.None); 
 pipeline.WaitUntilIdle(TimeSpan.FromMinutes(5), CancellationToken.None); // Wait for 5 minutes of the pipeline being idle before exit.
 ```
 
-You can optionally handle the [StreamFinished event](https://github.com/mat-docs/Atlas.AdvancedStreams.Examples/tree/main/MAT.OCS.Streaming.Samples/Samples/Basic/TData.cs#L88).
+You can optionally handle the [StreamFinished event](https://github.com/mat-docs/MAT.OCS.Streaming.Samples/tree/main/MAT.OCS.Streaming.Samples/Samples/Basic/TData.cs#L88).
 ```cs
 input.StreamFinished += (sender, e) => Trace.WriteLine("Finished"); // Handle the steam finished event
 ```
