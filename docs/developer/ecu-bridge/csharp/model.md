@@ -1,4 +1,4 @@
-# Model sample
+# Model Execution
 
 A basic example of a model calculating the total horizontal acceleration parameter called gTotal. 
 
