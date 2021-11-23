@@ -32,9 +32,9 @@ Create a stream pipeline using the KafkaStreamClient and the topicName. Stream t
 ```cs
 var pipeline = client.StreamTopic(topicName).Into(streamId => // Stream Kafka topic into the handler method
 ```
- - *IStreamPipeline **Into**(Func<string, IStreamInput> inputFactory):*\
+ - *IStreamPipeline **Into**(Func<string, IStreamInput> inputFactory):*
 Binds the specified input factory into an IStreamPipeline, which provides stream control and represents the disposable network resource. The factory is invoked for each child stream within a topic to allow a new instance of user processing code.
- - *IStreamPipeline **IntoMultiple**(ICollection<Func<string, IStreamInput>> inputFactories):*\
+ - *IStreamPipeline **IntoMultiple**(ICollection<Func<string, IStreamInput>> inputFactories):*
 Binds multiple input factories into an IStreamPipeline, which provides stream control and represents the disposable network resource. Each factory is invoked for each child stream within a topic to allow a new instance of user processing code.
 
 The stream pipeline (ISteamPipeline impl) will run a separate thread and starts polling messages from the Kafka topic, based on the topicName provided. If a new stream session is found on the Kafka topic, the above mentioned stream handler method will be invoked.
@@ -55,24 +55,24 @@ sslConfigurationDetails.Add("ssl.key.password", "password");
 var pipeline = client.StreamTopic(topicName).WithConsumerProperties(sslConfigurationDetails).Into(streamId => // Stream Kafka topic into the handler method
 ```
   
-  - **WaitUntilStopped(TimeSpan timeout, CancellationToken ct)**:\
+  - **WaitUntilStopped(TimeSpan timeout, CancellationToken ct)**:
 Wait for the pipeline to stop.
   
-  - **WaitUntilFirstStream(TimeSpan timeout, CancellationToken ct)**:\
+  - **WaitUntilFirstStream(TimeSpan timeout, CancellationToken ct)**:
 Wait for at least one stream to start. Does not reset after the first stream. Returns true immediately if a stream has already started, even if it has since finished.
 
- - **WaitUntilStopped(TimeSpan timeout, CancellationToken ct)**:\
+ - **WaitUntilStopped(TimeSpan timeout, CancellationToken ct)**:
 Wait for the pipeline to stop.
 
 #### Pipeline statuses
 
- - **IsConnected**:\
+ - **IsConnected**:
 Gets whether the pipeline is connected to an upstream source.
- - **IsStopped**:\
+ - **IsStopped**:
 Gets whether the pipeline is stopped.
- - **IsFaulted**:\
+ - **IsFaulted**:
 Gets when the pipeline has stopped due to an unhandled exception.
- - **HasFirstStream**:\
+ - **HasFirstStream**:
 Gets whether at least one stream has started.
 
 #### Pipeline exception/error handling
@@ -95,24 +95,24 @@ sslConfigurationDetails.Add("ssl.key.password", "password");
 var pipeline = client.StreamTopic(topicName).WithConsumerProperties(sslConfigurationDetails).Into(streamId => // Stream Kafka topic into the handler method
 ```
   
-  - **WaitUntilStopped(TimeSpan timeout, CancellationToken ct)**:\
+  - **WaitUntilStopped(TimeSpan timeout, CancellationToken ct)**:
 Wait for the pipeline to stop.
   
-  - **WaitUntilFirstStream(TimeSpan timeout, CancellationToken ct)**:\
+  - **WaitUntilFirstStream(TimeSpan timeout, CancellationToken ct)**:
 Wait for at least one stream to start. Does not reset after the first stream. Returns true immediately if a stream has already started, even if it has since finished.
 
- - **WaitUntilStopped(TimeSpan timeout, CancellationToken ct)**:\
+ - **WaitUntilStopped(TimeSpan timeout, CancellationToken ct)**:
 Wait for the pipeline to stop.
 
 #### Pipeline statuses
 
- - **IsConnected**:\
+ - **IsConnected**:
 Gets whether the pipeline is connected to an upstream source.
- - **IsStopped**:\
+ - **IsStopped**:
 Gets whether the pipeline is stopped.
- - **IsFaulted**:\
+ - **IsFaulted**:
 Gets when the pipeline has stopped due to an unhandled exception.
- - **HasFirstStream**:\
+ - **HasFirstStream**:
 Gets whether at least one stream has started.
 
 #### Pipeline exception/error handling
@@ -122,37 +122,37 @@ You can check for errors through the *IsFaulted* status. In case of exception th
 
 #### Pipeline management methods
 
- - **Drain()**:\
-Stops the pipeline when all currently active streams have ended. No further streams will be started. *Dispose()* must still be called. The stream will replay from this point when restarted, if capable of doing so. Synchronize by calling  *WaitUntilStopped()*.\
+ - **Drain()**:
+Stops the pipeline when all currently active streams have ended. No further streams will be started. *Dispose()* must still be called. The stream will replay from this point when restarted, if capable of doing so. Synchronize by calling  *WaitUntilStopped()*.
 Replay from the point this call is made implies that some messages will be seen twice. These can be filtered out.
 
- - **Stop()**:\
+ - **Stop()**:
 Stops the pipeline by detaching inputs without reading further messages. *Dispose()* must still be called. The stream will replay from this point when restarted, if capable of doing so. Synchronize by calling *WaitUntilStopped()*.
  
-  - **WaitUntilConnected(TimeSpan timeout, CancellationToken ct)**:\
+  - **WaitUntilConnected(TimeSpan timeout, CancellationToken ct)**:
 Wait until the pipeline is connected to an upstream source.
  
-  - **WaitUntilIdle(TimeSpan timeout, CancellationToken ct)**:\
+  - **WaitUntilIdle(TimeSpan timeout, CancellationToken ct)**:
 Wait until the pipeline does not have an active stream. For topics with overlapping streams, this may never happen - consider using Drain().
   
-  - **WaitUntilStopped(TimeSpan timeout, CancellationToken ct)**:\
+  - **WaitUntilStopped(TimeSpan timeout, CancellationToken ct)**:
 Wait for the pipeline to stop.
   
-  - **WaitUntilFirstStream(TimeSpan timeout, CancellationToken ct)**:\
+  - **WaitUntilFirstStream(TimeSpan timeout, CancellationToken ct)**:
 Wait for at least one stream to start. Does not reset after the first stream. Returns true immediately if a stream has already started, even if it has since finished.
 
- - **WaitUntilStopped(TimeSpan timeout, CancellationToken ct)**:\
+ - **WaitUntilStopped(TimeSpan timeout, CancellationToken ct)**:
 Wait for the pipeline to stop.
 
 #### Pipeline statuses
 
- - **IsConnected**:\
+ - **IsConnected**:
 Gets whether the pipeline is connected to an upstream source.
- - **IsStopped**:\
+ - **IsStopped**:
 Gets whether the pipeline is stopped.
- - **IsFaulted**:\
+ - **IsFaulted**:
 Gets when the pipeline has stopped due to an unhandled exception.
- - **HasFirstStream**:\
+ - **HasFirstStream**:
 Gets whether at least one stream has started.
 
 #### Pipeline exception/error handling
@@ -266,12 +266,12 @@ TelemetryDataBuffer buffer = input.DataInput.BindDefaultFeed(ParameterId).Buffer
 The *TelemetryDataBuffer* type has a few public methods:
  - void PutData(TelemetryData data) 
  - TelemetryData GetData(TelemetryData data)
- - TelemetryData GetDataInWindow(ITimeWindowCursor cursor):\
+ - TelemetryData GetDataInWindow(ITimeWindowCursor cursor):
 Gets buffered data in the cursor window. Data before the cursor window is discarded. The window may not be complete. Returns Buffered data in the cursor window.
- - TelemetryData GetDataInCompleteWindow(ITimeWindowCursor cursor):\
+ - TelemetryData GetDataInCompleteWindow(ITimeWindowCursor cursor):
  Gets buffered data in the cursor window if there are samples beyond the end of the window. Returns Buffered data in the cursor window, or empty data if the window is incomplete.
  - bool IsEmpty()
- - TimeRange TimeRange():\
+ - TimeRange TimeRange():
 Gets the time range covered by data in the buffer, or *TimeRange.Invalid* if the buffer is empty.
 
 A typical use case could be that you would read the buffer content only when a Lap is completed:
@@ -313,13 +313,13 @@ Events buffer uses a generic *DataBuffer* implementation, with a little bit diff
  - void PutData(T data) 
  - void PutData(IEnumerable<T> data) 
  - IList<T> GetData(TelemetryData data)
- - IList<T> GetDataInWindow(TimeRange window):\
+ - IList<T> GetDataInWindow(TimeRange window):
 Gets and removes all buffered data in the specified time window. Returns Buffered data in the time window.
- - IList<T> GetDataInCompleteWindow(TimeRange window):\
+ - IList<T> GetDataInCompleteWindow(TimeRange window):
 Gets and removes all buffered data in the specified time window IF there is data extending up to, or past the end of the specified window. Returns Buffered data in the time window, or an empty list if the window is incomplete.
  - int Count()
  - bool IsEmpty()
- - TimeRange TimeRange():\
+ - TimeRange TimeRange():
 Gets the time range covered by data in the buffer.
 
 The usage is very similar to the TData buffer, you create a reference to the *EventsInput.Buffer*:
