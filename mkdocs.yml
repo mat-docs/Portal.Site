@@ -55,7 +55,7 @@ nav:
       - Feed Setup:                 developer/nuget/setup.md
     - SQL Race API:                 developer/sqlrace-api.md
     - 📘 ATLAS Display API:         developer/atlas-displayapi.md
-    - ECu Bridge:
+    - ECU Bridge:
         - Concepts:             
             - Topic, Streams & Sessions:           developer/ecu-bridge/concepts/topic-streams-sessions.md
             - It's all about Time:                 developer/ecu-bridge/concepts/its-all-about-time.md

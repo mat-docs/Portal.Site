@@ -1,5 +1,5 @@
 # Basic samples of Read
-The following chapters demonstrate the simple usage of Advanced Streams through basic samples, covering all the bare-minimum steps to implement Telematry Data, Telemetry Samples and Event **reads** from Kafka or Mqtt streams.
+The following chapters demonstrate the simple usage of ATLAS Streams through basic samples, covering all the bare-minimum steps to implement Telemetry Data, Telemetry Samples and Event **reads** from Kafka or Mqtt streams.
 The [full source code of the samples is here](https://github.com/mat-docs/MAT.OCS.Streaming.Samples).
 
 ### Configurations and dependencies
