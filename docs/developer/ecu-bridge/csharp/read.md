@@ -22,7 +22,7 @@ If you want to connect to MQTT, create a client of MqttStreamClient instead of K
 ```cs
 var client = new MqttStreamClient(new MqttConnectionConfig(brokerList, "userName", "password"));
 ```
-Read more about [Topics, Streams and Sessions here](../concepts/data-feeds-formats-views.md#topics-streams-and-sessions).
+Read more about [Topics, Streams and Sessions here](../concepts/topic-streams-sessions.md).
 
 ### Stream pipeline
 

@@ -1,6 +1,7 @@
 # Basic samples of Write
-The following chapters demonstrate the simple usage of ATLAS Streams through basic samples, covering all the bare-minimum steps to implement Telemetry Data, Telemetry Samples and Event **write** to Kafka or Mqtt streams.\
-The [full source code of the samples is here](./src).
+The following chapters demonstrate the simple usage of ATLAS Streams through basic samples, covering all the bare-minimum steps to implement Telemetry Data, Telemetry Samples and Event **write** to Kafka or Mqtt streams.
+
+The [full source code of the samples is here](https://github.com/mat-docs/MAT.OCS.Streaming.Samples).
 
 First of all you need to configure the [dependencies](https://github.com/mat-docs/MAT.OCS.Streaming.Samples/blob/main/MAT.OCS.Streaming.Samples/Samples/Basic/TData.cs#L102-L113)
 ```cs
