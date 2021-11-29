@@ -9,7 +9,7 @@ It also allows messages packed up as Quads from custom ECU or telemetry system t
 ## Instructions to upgrade existing dll 
 
 * Install the new version of Atlas 10.4.4
-* Replace the files (TAtlasApi.cpp and TAtlasApi.h) in the project for the custom decode dll with the files from https://github.com/mat-docs/AtlasAPI
+* Replace the files (TAtlasApi.cpp and TAtlasApi.h) in the project for the custom decode dll with the files from [AtlasAPI](https://github.com/mat-docs/AtlasAPI)
 * Modify the code in the project to call BeginConfig on the instance of CTAtlasApi object that you hold in the decode dll before you send the first configuration object
 * Call EndConfig after you send the last configuration object. 
 * Change the target platform to x64 (Win32 library cannot be loaded by Atlas 10 as it is a x64 application)
