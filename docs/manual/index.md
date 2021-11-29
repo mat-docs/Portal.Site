@@ -5,6 +5,10 @@
 [Scatterplot Sample Modes](articles/scatterplot-sample-modes.md) (2021-08-06)
 :   _Understand how Scatterplot **Data Point Mode** alters the way samples are plotted for the Scatterplot display_
 
+[Decode dll](articles/decode-dll.md) (2021-11-29)
+:   _Instructions to upgrade existing decode dll to work with ATLAS 10.4.4_
+
+
 ## Quick-Reference
 
 ### User Interface
