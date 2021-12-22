@@ -12,4 +12,7 @@ ATLAS is available from the [McLaren Applied Software Portal](https://www.mclare
 * [Standalone ADS (ATLAS Data Server)](https://www.mclarenelectronics.com/Portal/Downloads/Software.aspx#Standalone%20ADS)
 * [System Monitor](https://www.mclarenelectronics.com/Portal/Downloads/Software.aspx#System%20Monitor)
 * [vTAG Server](https://www.mclarenelectronics.com/Portal/Downloads/Software.aspx#vTAG%20Server)
-
+* [ECU Bridge](https://www.mclarenelectronics.com/Portal/Downloads/Software.aspx#vTAG%20Server)
+    * ECU Bridge binaries
+    * Dependencies Service
+    * Topic Management Service

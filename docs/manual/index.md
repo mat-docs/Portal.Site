@@ -5,7 +5,10 @@
 [Scatterplot Sample Modes](articles/scatterplot-sample-modes.md) (2021-08-06)
 :   _Understand how Scatterplot **Data Point Mode** alters the way samples are plotted for the Scatterplot display_
 
-[Session Markers](articles/markers.md) (2021-11-17)
+[Decode dll](articles/decode-dll.md) (2021-11-29)
+:   _Instructions to upgrade existing decode dll to work with ATLAS 10.4.4_
+
+[Session Markers](articles/markers.md) (2021-12-12)
 :   _Information on annotating ranges of data using markers_
 
 ## Quick-Reference
@@ -34,3 +37,14 @@
 [Custom Function DLLs](functions/dlls.md)
 :   _Quick-reference template for custom functions_;  
     _ Worked example in [Code Samples](../developer/sqlrace-api.md#code-samples-index)_
+
+### ECU Bridge
+
+[Concepts](ecu-bridge/design-concept.md)
+:   _Design concepts_
+
+[Introduction](ecu-bridge/introduction.md)
+:   _Description of the services used by ECU Bridge_
+
+[Configuration](ecu-bridge/configuration.md)
+:   _How to setup ECU Bridge_
