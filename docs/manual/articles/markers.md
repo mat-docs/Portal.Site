@@ -18,12 +18,12 @@ Each marker can have any number of labels associated with it to provide addition
 
 - Name \- A short, computer readable name for referencing the label in code.
 - Label \- A short, human readable summary of what the label represents.
-- Description \- A longer form human readable explanation of what the label represents.
+- Description \- A detailed, human readable explanation of what the label represents.
 - Value \- A value associated with this marker.
 - Format \- The C-Style format string used when displaying the value to the user e.g. `%.3f` for a real number displayed to 3 decimal places.
 - Unit \- The definition of the units that the value is measured in.
 
-None of these properties are required and they can be used in any combination e.g. using only the label or using just the value and units.
+None of these properties are mandatory and they can be used in any combination e.g. using only the label or using just the value and units.
 
 The user can review and select markers using the timeline. If labels are present they will be displayed in the tooltip when hovering over the marker in
 the drop down list. The following image shows an example of a marker with labels that was created using the SQL Race API as described below.
@@ -43,7 +43,7 @@ Markers can be added programmatically such as by a simulation model or separate 
         new MarkerLabel
         {
             Label = "Average Speed",
-            Description = "A average sustained wind speed during this time period",
+            Description = "An average sustained wind speed during this time period",
             Value = "9.6382834",
             Format = "%.2f",
             Unit = "m/s",
