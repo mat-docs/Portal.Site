@@ -83,7 +83,7 @@ Example:
 }
 ```
 
-Notice the declaration of both  `dataFormat`  and  `atlasConfiguration`  dependencies. This is a minimum requirement to use the ATLAS 10 stream recorder.
+Notice the declaration of both  `dataFormat`  and  `atlasConfiguration`  dependencies. This is a minimum requirement to use the ATLAS stream recorder.
 
 [session.schema.json](../assets/session.schema.json)
 

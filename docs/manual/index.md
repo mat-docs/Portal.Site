@@ -6,7 +6,7 @@
 :   _Understand how Scatterplot **Data Point Mode** alters the way samples are plotted for the Scatterplot display_
 
 [Decode dll](articles/decode-dll.md) (2021-11-29)
-:   _Instructions to upgrade existing decode dll to work with ATLAS 10.4.4_
+:   _Instructions to upgrade existing decode dll to work with ATLAS (version 10.4.4 onwards)_
 
 [Session Markers](articles/markers.md) (2021-12-12)
 :   _Information on annotating ranges of data using markers_

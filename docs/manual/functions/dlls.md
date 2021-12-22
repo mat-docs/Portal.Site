@@ -1,6 +1,6 @@
 # Function DLLs
 
-ATLAS 10 supports function DLLs written in .NET Framework.
+ATLAS supports function DLLs written in .NET Framework.
 
 ## Code Structure
 
