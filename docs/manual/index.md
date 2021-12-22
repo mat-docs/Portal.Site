@@ -8,6 +8,8 @@
 [Decode dll](articles/decode-dll.md) (2021-11-29)
 :   _Instructions to upgrade existing decode dll to work with ATLAS 10.4.4_
 
+[Session Markers](articles/markers.md) (2021-12-12)
+:   _Information on annotating ranges of data using markers_
 
 ## Quick-Reference
 
