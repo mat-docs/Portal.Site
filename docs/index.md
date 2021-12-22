@@ -15,7 +15,7 @@ _12th November 2021_
 
 In this release, we delivered the below new features and improvements
 
-* Decode and Data Source dll support for ATLAS 10 client
+* Decode and Data Source dll support for ATLAS client
 * Session Browser query performance improvements on large session lists
 * Alarms/functions performance improvements
 * FiA lite licence

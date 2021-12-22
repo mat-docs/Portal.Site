@@ -2,7 +2,7 @@
 
 ## Overview
 
-In the ATLAS 10 Scatterplot, there is a selection of different _Data Point Modes_.
+In the ATLAS Scatterplot, there is a selection of different _Data Point Modes_.
 The different _Data Point Mode_ selection alters the way in which the X, Y (and Z) samples are calculated for plotting co-ordinates on the scatterplot.
 
 These can be accessed via the _Display Properties_ Window for the Scatterplot.
@@ -28,7 +28,7 @@ _ATLAS 10.4.1 and later_
 !!! note
     In this mode, the _Frequency (Hz)_ and _Sample Count_ fields are ignored and read only.
 
-_All Samples_ mode in ATLAS 10 Versions &gt;= 10.4.1 operates by taking each sample of the Highest rate parameter, and referencing the sample and hold values of the other parameter(s). There is no averaging of samples, and only real values will be plotted. 
+_All Samples_ mode in ATLAS Versions &gt;= 10.4.1 operates by taking each sample of the Highest rate parameter, and referencing the sample and hold values of the other parameter(s). There is no averaging of samples, and only real values will be plotted. 
 
 If the X Parameter is logged at 100Hz, and the Y at 10Hz, the Y parameter will effectively be super-sampled at 100Hz in order to plot a point for each X parameter sample. If super-sampling is not desired, we recommend creating a function(s) which down-samples parameters where required, such that X, Y (and Z) are all at the same rate. 
 

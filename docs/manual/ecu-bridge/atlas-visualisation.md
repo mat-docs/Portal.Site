@@ -2,7 +2,7 @@
 
 _Visualising streaming data into ATLAS using AAS Recorder._
 
-There is an ATLAS Advanced Streams "AAS recorder" included with ATLAS 10, which can be configured in _Tools > Options > Recorders > AAS Recorder_ 
+There is an ATLAS Advanced Streams "AAS recorder" included with ATLAS, which can be configured in _Tools > Options > Recorders > AAS Recorder_ 
 
 ![aas-recorder-config.png](./assets/aas-recorder-config.png)
 

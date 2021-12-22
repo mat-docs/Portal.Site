@@ -5,7 +5,7 @@ _12th November 2021_
 
 In this release, we delivered the below new features and improvements
 
-* Decode and Data Source dll support for ATLAS 10 client
+* Decode and Data Source dll support for ATLAS client
 * Session Browser query performance improvements on large session lists
 * Alarms/functions performance improvements
 * FiA lite licence
@@ -21,7 +21,7 @@ In this release, we delivered the below new features:
 * Added new Data point modes in the Scatterplot
 * Implemented service connection setup for external data sources (RTA toolkit services)
 * ADS Standalone installer 
-    * Live weather data support in ATLAS 10 through Pitwall Weather Server
+    * Live weather data support in ATLAS through Pitwall Weather Server
 * vTAG Server update
 
 And we focused on delivering improvements in the below areas:
