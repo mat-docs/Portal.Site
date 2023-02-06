@@ -1,50 +1,71 @@
 # Latest News
 
-## ATLAS 2021-R4 (10.4.4.220)
-_12th November 2021_
+## ATLAS 2023-R1 (11.2.1.199)
+_03 Feb 2023_
 
-In this release, we delivered the below new features and improvements
-
-* Decode and Data Source dll support for ATLAS client
-* Session Browser query performance improvements on large session lists
-* Alarms/functions performance improvements
-* FiA lite licence
+In this release, we focused on delivering fixes in the areas below:
+* Distance mode - Overlays
+* Events
+* Export Tool
 
 
-## ATLAS 2021-R3 (10.4.3.382)
-_6th August 2021_
+## .NET 6 Update Beta release (11.1.4.291-BETA)
+_23 Dec 2022_
 
-In this release, we delivered the below new features:
+We would like to take this opportunity to get some valuable feedback from you, especially 
+significant regressions in key areas (fatal errors, data integrity issues, appearance, 
+functionality, performance and scalability, usability, etc.). If you have an automated test suite 
+or deployment workflow, run that in addition to your manual testing. If you discover a bug or 
+regression, include your testing process and any pertinent information in your issue comment 
+so that we can try to reproduce it.
 
-* Support for multiple instances of PGVs with same ID
-* Ability rename index sources in the Session Browser
-* Added new Data point modes in the Scatterplot
-* Implemented service connection setup for external data sources (RTA toolkit services)
-* ADS Standalone installer 
-    * Live weather data support in ATLAS through Pitwall Weather Server
-* vTAG Server update
+## ATLAS 2022-R4 (11.1.4.197)
+_16th November 2022_
 
-And we focused on delivering improvements in the below areas:
+In this release, we delivered the following new features/improvements:
+* Data Export now features the ability to export to SQLRace database and SSN2 session 
+formats
 
-* Alarms 
-* Distance and Overlays 
+And we focused on delivering fixes in the below areas
+* Alarms
+* Recorders
 * Waveform
-* Statistics 
-* Virtual Parameters
 
-## New Documentation Portal
-_6th August 2021_
+## ATLAS 2022-R3 (11.1.3.367)
+_31st Aug 2022_
 
-This new space is a central location for:
+In this release, we delivered the following new features/improvements:
+* UI Support for Lap Markers in the ATLAS client 
+* Data Export now features the ability to select Start/End times
+* Automation API NuGet and Examples
 
-* Quick-reference material for users
-* Developer guides &mdash; including:
-    * concepts and best-practises
-    * tutorials and sample code
-    * API references
-* Deployment and Integration guides
-* Links to software downloads and libraries
+And we focused on delivering fixes in the below areas
+* Platform
+* Export Tool
 
-Look forward to more detailed technical guides, and feature articles showing how to get the best out of ATLAS.
 
-Our [Zendesk portal](https://mclarenappliedtechnologies.zendesk.com/hc/en-us) will still be available, focused on trouble-shooting and support tickets.
+## ATLAS 2022-R2 (11.1.2.344)
+_13th May 2022_
+
+In this release, we delivered the following new features/improvements:
+* UI Support for custom Markers in the ATLAS client 
+* Configurable location for Auto Exporting SSN2s
+* Data Export now features a Parameter Browser for adding/selecting multiple 
+parameters
+
+And we focused on delivering fixes in the below areas
+* Platform
+* Session Browser
+
+## ATLAS 2022-R1 (11.1.1.222)
+_02 Feb 2022_
+
+In this release, we delivered the following new features/improvements:
+* Support for custom Markers in the ATLAS client and through SQL Race API
+* Improvements to TelDST
+* Removing ATLAS 9 Licence dependency
+
+And we focused on delivering fixes in the below areas
+* Platform
+* Session Browser
+* SQL Race Server
