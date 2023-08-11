@@ -4,10 +4,12 @@
 _12 May 2023_
 
 In this release, we focused on delivering improvements in the areas below:
+
 * Alarms
 * Time base selection - Current lap button
   
 Also, we focused on delivering fixes in the areas below:
+
 * Event display
 * Numeric display
 * Platform
@@ -18,6 +20,7 @@ Also, we focused on delivering fixes in the areas below:
 _03 Feb 2023_
 
 In this release, we focused on delivering fixes in the areas below:
+
 * Distance mode - Overlays
 * Events
 * Export Tool
@@ -37,10 +40,12 @@ so that we can try to reproduce it.
 _16th November 2022_
 
 In this release, we delivered the following new features/improvements:
+
 * Data Export now features the ability to export to SQLRace database and SSN2 session 
 formats
 
 And we focused on delivering fixes in the below areas
+
 * Alarms
 * Recorders
 * Waveform
@@ -49,11 +54,13 @@ And we focused on delivering fixes in the below areas
 _31st Aug 2022_
 
 In this release, we delivered the following new features/improvements:
+
 * UI Support for Lap Markers in the ATLAS client 
 * Data Export now features the ability to select Start/End times
 * Automation API NuGet and Examples
 
 And we focused on delivering fixes in the below areas
+
 * Platform
 * Export Tool
 
@@ -62,12 +69,14 @@ And we focused on delivering fixes in the below areas
 _13th May 2022_
 
 In this release, we delivered the following new features/improvements:
+
 * UI Support for custom Markers in the ATLAS client 
 * Configurable location for Auto Exporting SSN2s
 * Data Export now features a Parameter Browser for adding/selecting multiple 
 parameters
 
 And we focused on delivering fixes in the below areas
+
 * Platform
 * Session Browser
 
@@ -75,11 +84,13 @@ And we focused on delivering fixes in the below areas
 _02 Feb 2022_
 
 In this release, we delivered the following new features/improvements:
+
 * Support for custom Markers in the ATLAS client and through SQL Race API
 * Improvements to TelDST
 * Removing ATLAS 9 Licence dependency
 
 And we focused on delivering fixes in the below areas
+
 * Platform
 * Session Browser
 * SQL Race Server

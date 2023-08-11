@@ -13,10 +13,12 @@ hide:
 _12 May 2023_
 
 In this release, we focused on delivering improvements in the areas below:
+
 * Alarms
 * Time base selection - Current lap button
 
 Also, we focused on delivering fixes in the areas below:
+
 * Event display
 * Numeric display
 * Platform
@@ -28,6 +30,7 @@ Also, we focused on delivering fixes in the areas below:
 _03 Feb 2023_
 
 In this release, we focused on delivering fixes in the areas below:
+
 * Distance mode - Overlays
 * Events
 * Export Tool
