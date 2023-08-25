@@ -1,6 +1,8 @@
 # User Guide
 
 ## Articles
+[Timeline Session Details](articles/timeline-info.md) (2023-08-18)
+:  _Introducing a new feature that shows session details as tooltip in the timeline_
 
 [Scatterplot Sample Modes](articles/scatterplot-sample-modes.md) (2021-08-06)
 :   _Understand how Scatterplot **Data Point Mode** alters the way samples are plotted for the Scatterplot display_
