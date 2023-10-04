@@ -4,7 +4,8 @@
 
 From version 11.2.3.460 onwards, ATLAS application now includes Jet Brains dotTrace and dotMemory profilers, which can 
 be accessed via the Tools menu. 
-Users can capture snapshots that can be shared with the ATLAS development team for further debugging.
+This function allows users to take snapshots, which can be shared with the ATLAS development team for debugging purposes. 
+Please use this feature only when specifically requested by the development team.
 
 !!! warning
     The profilers capture a large amount of information and will generate a large file. Please limit the amount of time 
@@ -36,4 +37,4 @@ Users can capture snapshots that can be shared with the ATLAS development team f
 3. Perform the actions that are required to be profiled and create snapshot as required using the option in the Tools menu. 
 4. Stop the profiler by navigating back through the Tools menu. 
 5. Navigate to the snapshot folder via `Tools > Performance Profiler > View Snapshot Folder`
-6. Send the *.dmw to your McLaren Applied support representative. .
+6. Send the *.dmw to your McLaren Applied support representative.
