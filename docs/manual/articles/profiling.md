@@ -9,7 +9,7 @@ Please use this feature only when specifically requested by the development team
 
 !!! warning
     The profilers capture a large amount of information and will generate a large file. Please limit the amount of time 
-    metrics are being capture to minimise file size.
+    metrics are being captured to minimise the file size.
 
 ## Capturing Performance Profile
 1. Navigate to `Tools > Performance Profiler > Performance > Start`.
@@ -34,7 +34,8 @@ Please use this feature only when specifically requested by the development team
 
     ![StartedMemory.png](assets%2Fprofiling%2FStartedMemory.png)
 
-3. Perform the actions that are required to be profiled and create snapshot as required using the option in the Tools menu. 
-4. Stop the profiler by navigating back through the Tools menu. 
-5. Navigate to the snapshot folder via `Tools > Performance Profiler > View Snapshot Folder`
-6. Send the *.dmw to your McLaren Applied support representative.
+3. Perform the actions that are required to be profiled.
+4. Create snapshot as required via `Tools > Performance Profiler > Memory > Snapshot`. 
+5. Stop the profiler by navigating back through the Tools menu. 
+6. Navigate to the snapshot folder via `Tools > Performance Profiler > View Snapshot Folder`
+7. Send the *.dmw to your McLaren Applied support representative.
