@@ -31,6 +31,7 @@ nav:
       - manual/articles/scatterplot-sample-modes.md
       - manual/articles/markers.md
       - manual/articles/decode-dll.md
+      - manual/articles/profiling.md
     - User Interface:
       - manual/ui/keyboard.md
       - manual/ui/mouse.md
