@@ -1,6 +1,9 @@
 # User Guide
 
 ## Articles
+[Performance Profilers](articles/profiling.md) (2021-12-12)
+:   _Instructions on capturing performance profiles_
+
 [Timeline Session Details](articles/timeline-info.md) (2023-08-18)
 :  _Introducing a new feature that shows session details as tooltip in the timeline_
 
