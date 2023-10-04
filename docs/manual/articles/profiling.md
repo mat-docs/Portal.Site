@@ -22,7 +22,7 @@ Users can capture snapshots that can be shared with the ATLAS development team f
 3. Preform the actions that are required to be profiled.
 4. Stop the profiler by navigating back through the Tools menu. 
 5. Navigate to the snapshot folder via `Tools > Performance Profiler > View Snapshot Folder`.
-6. Send the *.dtp and the *.dtp.000# to your McLaren Applied support representative. 
+6. Send the \*.dtp and the \*.dtp.000# to your McLaren Applied support representative. 
 
 ## Capturing Memory Profile
 1. Navigate to `Tools > Performance Profiler > Memory > Start`.
