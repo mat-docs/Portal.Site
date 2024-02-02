@@ -42,12 +42,42 @@ in .NET 6. Useful sites:
 
 ## MATLAB
 
-MATLAB versions earlier than 2022b do not support the .NET core runtime. 
+MATLAB versions earlier than 2022b do not support the .NET core runtime.
 
 The default .NET runtime for MATLAB versions 2022b can be configured to .NET Core with the 
 following command
 ```matlab
 dotnetenv('core')
+```
+
+The runtime configuration file for the .NET runtime can be found
+in `matlabroot/bin/dotnetcli_netcore.runtimeconfig.json` 
+With this file, MATLAB loads the latest appropriate assemblies compatible with SQLRace API.
+An example configuration for the runtime is provided below.
+```
+{
+  "runtimeOptions": {
+    "rollForward": "LatestMajor",
+    "tfm": "net6.0",
+    "frameworks": [
+      {
+        "name": "Microsoft.NETCore.App",
+        "version": "6.0.0"
+      },
+      {
+        "name": "Microsoft.WindowsDesktop.App",
+        "version": "6.0.0"
+      },
+      {
+        "name": "Microsoft.AspNetCore.App",
+        "version": "6.0.0"
+      }
+    ],
+    "configProperties": {
+      "System.Runtime.Serialization.EnableUnsafeBinaryFormatterSerialization": true
+    }
+  }
+}
 ```
 
 More information about calling .NET from MATLAB can be found in the 
