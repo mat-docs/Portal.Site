@@ -51,7 +51,7 @@ dotnetenv('core')
 ```
 
 The runtime configuration file for the .NET runtime can be found
-in `matlabroot/bin/dotnetcli_netcore.runtimeconfig.json` 
+in `matlabroot/bin/win64/dotnetcli_netcore.runtimeconfig.json`.
 With this file, MATLAB loads the latest appropriate assemblies compatible with SQLRace API.
 An example configuration for the runtime is provided below.
 ```
@@ -81,8 +81,7 @@ An example configuration for the runtime is provided below.
 ```
 
 More information about calling .NET from MATLAB can be found in the 
-[MATLAB documentation](https://mathworks.com/help/matlab/call-net-from-matlab.html)
-.
+[MATLAB documentation](https://mathworks.com/help/matlab/call-net-from-matlab.html).
 
 ## Python
 
