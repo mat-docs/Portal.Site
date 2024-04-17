@@ -9,30 +9,32 @@ hide:
 
 ## Latest News
 
-### ATLAS 2023-R2 (11.2.2.2)
-_12 May 2023_
+### ATLAS 2024-R2 (11.3.2.XXX)
+_DD MMMM 2024_
 
 In this release, we focused on delivering improvements in the areas below:
 
-* Alarms
-* Time base selection - Current lap button
+* xxx
 
 Also, we focused on delivering fixes in the areas below:
 
-* Event display
+* xxx
+
+
+### ATLAS 2024-R1 (11.3.1.584)
+_19 March 2024_
+
+In this release, we focused on delivering improvements in the areas below:
+
+* Go To dialog
+* Markers
+* NASCAR Telemetry Recorder (*Preview Feature – Licensable option*)
+
+Also, we focused on delivering fixes in the areas below:
+
 * Numeric display
 * Platform
-* Scatterplot
-* Waveform
-
-### ATLAS 2023-R1 (11.2.1.199)
-
-_03 Feb 2023_
-
-In this release, we focused on delivering fixes in the areas below:
-
-* Distance mode - Overlays
-* Events
-* Export Tool
+* Missing parameters in Live recording
+* Vulnerabilities in 3rd party NuGet packages deemed susceptible to security risks
 
 [more news](news/index.md)
