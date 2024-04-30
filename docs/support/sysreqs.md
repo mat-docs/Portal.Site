@@ -6,15 +6,13 @@
 
 ## Recommended Hardware
 
-* 16 GB RAM
+* 16 GB RAM or higher
 * Quad-core Intel Core i7 or equivalent
 * Dedicated GPU - NVidia Quadro M1000M or better
 
 ## Virtual Environments
 
 ATLAS will run on Server VMs with Remote Desktop.
-
-We support Windows Server 2016 or later.
 
 Enable GPU support where possible:
 
