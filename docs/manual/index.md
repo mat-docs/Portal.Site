@@ -41,7 +41,7 @@
 
 [Custom Function DLLs](functions/dlls.md)
 :   _Quick-reference template for custom functions_;  
-    _ Worked example in [Code Samples](../developer/sqlrace-api.md#code-samples-index)_
+    _ Worked example in [Code Samples](../developer/sqlrace/sqlrace-api.md#code-samples-index)_
 
 ### ECU Bridge
 
