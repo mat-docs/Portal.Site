@@ -1,6 +1,6 @@
 # Parameter Data Access
 
-**ParameterDataAccess objects (PDA)** are used to defines how parameter values are 
+**ParameterDataAccess objects (PDAs)** are used to defines how parameter values are 
 sampled or interpolated via SQL Race.
 
 PDA can be created by the
@@ -9,7 +9,7 @@ method and is associated with both the Session and a Parameter.
 More than one PDA can exist within a session as each can used to retrieve values from a
 different parameter.
 
-Methods on the PDA object allow you to:
+Methods on the PDA allow you to:
 
 * Move to specific point in time
 * Set the sample time
@@ -54,6 +54,11 @@ samples within the returned array.
 * Samples that represents values as measured by the data logger will have data status `Sample`.
 * Data that are interpolated will have data status `Interpolated`.
 
+!!! warning 
+    
+    The length of `ParameterValues.Data` is not an indication of the amount of valid 
+    sample returned. Use `ParameterValues.SampleCount` to get the number of valid samples.
+
 ## Examples
 
 ### Getting Samples from a Historic Session
@@ -86,7 +91,7 @@ samples within the returned array.
             // Print data and status to console window
             for (int i = 0; i < 10; i++)
             {
-                Console.WriteLine("Data: {0}, Timestamp: {1}, Status: {2}", parameterValues.Data[i], parameterValues.Timestamp[i], parameterValues.DataStatus[i]);            }
+                Console.WriteLine($"Data: {parameterValues.Data[i]}, Timestamp: {parameterValues.Timestamp[i]}, Status: {parameterValues.DataStatus[i]}");            }
             }
         }
     }
@@ -205,16 +210,16 @@ retrieved.
                 // Print data and status to console window
                 for (int i = 0; i < parameterValues.SampleCount; i++)
                 {
-                    Console.WriteLine("Data: {0}, Timestamp: {1}, Status: {2}", parameterValues.Data[i], parameterValues.Timestamp[i], parameterValues.DataStatus[i]);
-                }
+                Console.WriteLine($"Data: {parameterValues.Data[i]}, Timestamp: {parameterValues.Timestamp[i]}, Status: {parameterValues.DataStatus[i]}");                }
                 Console.WriteLine($"New Cursor Position: {pda.CurrentTime}");
     
                 // Wait for a second
                 Thread.Sleep(1000);
+                }
             }
         }
     }
-    }
+
     ```
 
 === "Python"
@@ -306,10 +311,169 @@ retrieved.
     clientSession.Close()
     ```
 
-<!---
-## Getting multiple parameters at the same time
--->
 
+### Caching PDA to Improve Efficiency
+It is advisable to reuse PDAs regardless of whether multiple parameters are in use. 
+
+=== "C#"
+
+    ``` csharp
+    // Local database connection string and session key for data already recorded
+    string connectionString = @"DbEngine=SQLite;Data Source=C:\session01.ssndb;Pooling=false;";
+    SessionKey sessionKey = SessionKey.Parse("7DD05707-EAA2-4A36-BB8A-E2327AA52BFC");
+    
+    // List of parameter identifiers to obtain samples from
+    List<string> parameterIdentifiers = new List<string> { "vCar:Chassis", "nEngine:FIA" };
+    
+    // Initialise SQLRace API
+    Core.Initialize();
+    var sessionManager = SessionManager.CreateSessionManager();
+    
+    // Load existing session
+    using (var clientSession = sessionManager.Load(sessionKey, connectionString))
+    {
+        // Create the pda cache
+        Dictionary<string, ParameterDataAccessBase> pdaCache = new Dictionary<string, ParameterDataAccessBase>();
+        
+        // Obtain the session
+        var session = clientSession.Session;
+        
+        foreach (var parameterIdentifier in parameterIdentifiers)
+        {
+            // Open and cache PDA
+            ParameterDataAccessBase pda;
+            if (pdaCache.ContainsKey(parameterIdentifier))
+            {
+                pda = pdaCache[parameterIdentifier];
+            }
+            else
+            {
+                pda = session.CreateParameterDataAccess(parameterIdentifier);
+                pdaCache[parameterIdentifier] = pda;
+            }
+    
+            // Go to the start of the session
+            pda.GoTo(session.StartTime);
+    
+            // Get 10 samples
+            var parameterValues = pda.GetNextSamples(10, StepDirection.Forward);
+    
+            // Print data and status to console window
+            Console.WriteLine($"Parameter: {parameterIdentifier}");
+            for (int i = 0; i < 10; i++)
+            {
+                Console.WriteLine($"Data: {parameterValues.Data[i]}, Timestamp: {parameterValues.Timestamp[i]}, Status: {parameterValues.DataStatus[i]}");
+            }
+    
+        }
+    
+        // Dispose the PDAs afterwards
+        foreach (var parameterDataAccessBase in pdaCache)
+        {
+            parameterDataAccessBase.Value.Dispose();
+        }
+    }
+    ```
+
+=== "Python"
+
+    ```python
+    # Local database connection string and session key for data already recorded
+    connection_string = r"DbEngine=SQLite;Data Source=C:\session01.ssndb;Pooling=false;"
+    sessionKey = SessionKey.Parse("7DD05707-EAA2-4A36-BB8A-E2327AA52BFC")
+
+    # List of parameter identifiers to obtain samples from
+    parameterIdentifiers = ["vCar:Chassis", "nEngine:FIA"]
+    
+    # Initialise SQLRace API
+    Core.Initialize()
+    session_manager = SessionManager.CreateSessionManager()
+    
+    
+    # Load existing session
+    client_session = session_manager.Load(sessionKey, connection_string)
+    pda_cache = {}
+    # Obtain the session
+    session = client_session.Session
+    for parameterIdentifier in parameterIdentifiers:
+        # Open and cache PDA
+        if parameterIdentifier in pda_cache:
+            pda = pda_cache[parameterIdentifier]
+        else:
+            pda = session.CreateParameterDataAccess(parameterIdentifier)
+            pda_cache[parameterIdentifier] = pda
+    
+        # Go to the start of the session
+        pda.GoTo(session.StartTime)
+    
+        # Get 10 samples
+        parameter_values = pda.GetNextSamples(10, StepDirection.Forward)
+    
+        # Print data and status to console window
+        print(f"Parameter: {parameterIdentifier}")
+        for i in range(10):
+            print(
+                f"Data: {parameter_values.Data[i]}, TimeStamp: {parameter_values.Timestamp[i]} Status: {parameter_values.DataStatus[i]}")
+    
+    for pda in pda_cache.values():
+        pda.Dispose()
+    
+    # Dispose objects once we are finish with it
+    pda.Dispose()
+    client_session.Close()
+    ```
+=== "MATLAB"
+    
+    ```matlab
+    % Local database connection string and session key for data already recorded
+    connectionString = "DbEngine=SQLite;Data Source=C:\session01.ssndb;Pooling=false;";
+    sessionKey = SessionKey.Parse("7DD05707-EAA2-4A36-BB8A-E2327AA52BFC");
+    
+    % List of parameter identifiers to obtain samples from
+    parameterIdentifiers = ["vCar:Chassis", "nEngine:FIA"];
+    
+    % Initialise SQLRace API
+    Core.Initialize()
+    sessionManager = SessionManager.CreateSessionManager();
+    
+    % Load existing session
+    clientSession = sessionManager.Load(sessionKey, connection_string);
+    
+    % Create the pda cache
+    pdaCache = configureDictionary("string","MESL.SqlRace.Domain.ParameterDataAccess");
+    
+    % Obtain the session
+    session = clientSession.Session;
+    
+    for parameterIdentifier = parameterIdentifiers
+        % Open and cache PDA
+        if isKey(pdaCache,parameterIdentifier)
+            pda = pdaCache(parameterIdentifier);
+        else
+            pda = session.CreateParameterDataAccess(parameterIdentifier);
+            pdaCache(parameterIdentifier) = pda;
+        end
+    
+        %  Go to the start of the session
+        pda.GoTo(session.StartTime);
+        
+        % Get 10 samples
+        parameterValues = pda.GetNextSamples(10, StepDirection.Forward);
+        
+        % Print data and status to console window
+        fprintf("Parameter: %s",parameterIdentifier)
+        for i=1:10
+            fprintf("Data: %f, Timestamp: %i, Status: %s\n",parameterValues.Data(i),parameterValues.Timestamp(i),parameterValues.DataStatus(i))
+        end 
+    end
+
+    % Dispose objects once we are finish with it
+    pdas = values(pdaCache,"cell");
+    for i = 1:length(pdas)
+        pdas{i}.Dispose()
+    end
+    clientSession.Close()
+    ```
 
 <!---
 TODO: BUG for pda.GetNextData ADO:85594
@@ -351,8 +515,7 @@ TODO: BUG for pda.GetNextData ADO:85594
             // Print data and status to console window
             for (int i = 0; i < 10; i++)
             {
-                Console.WriteLine("Data: {0}, Timestamp: {1}, Status: {2}", parameterValues.Data[i], parameterValues.Timestamp[i], parameterValues.DataStatus[i]);            }
-            }
+                        Console.WriteLine($"Data: {parameterValues.Data[i]}, Timestamp: {parameterValues.Timestamp[i]}, Status: {parameterValues.DataStatus[i]}");            }
         }
     }
     ```
