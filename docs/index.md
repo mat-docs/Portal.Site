@@ -9,16 +9,20 @@ hide:
 
 ## Latest News
 
-### ATLAS 2024-R2 (11.3.2.XXX)
-_DD MMMM 2024_
+### ATLAS 2024-R2 (11.3.2.649)
+_10 May 2024_
 
 In this release, we focused on delivering improvements in the areas below:
 
-* xxx
+* PCU Dash Plugin
+* Alarms
 
 Also, we focused on delivering fixes in the areas below:
 
-* xxx
+* Histogram
+* Circuit
+* Summary Display
+* Platform
 
 
 ### ATLAS 2024-R1 (11.3.1.584)

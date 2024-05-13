@@ -1,5 +1,20 @@
 # Latest News
 
+### ATLAS 2024-R2 (11.3.2.649)
+_10 May 2024_
+
+In this release, we focused on delivering improvements in the areas below:
+
+* PCU Dash Plugin
+* Alarms
+
+Also, we focused on delivering fixes in the areas below:
+
+* Histogram
+* Circuit
+* Summary Display
+* Platform
+
 ### ATLAS 2024-R1 (11.3.1.584)
 _19 March 2024_
 
@@ -36,7 +51,7 @@ _25 October 2023_
 In this release, we focused on delivering improvements in the areas below:
 
 * Platform 
-* .NET 6 upgrade
+* [.NET 6 upgrade](../developer/net6-upgrade.md)
 * Timeline
 * Session Browser
 
