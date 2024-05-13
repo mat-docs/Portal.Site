@@ -6,8 +6,8 @@ sampled or interpolated via SQL Race.
 PDA can be created by the
 `Session.CreateParameterDataAccess(parameterIdentifier)`
 method and is associated with both the Session and a Parameter. 
-More than one PDA can exist within a session as each can used to retrieve values from a
-different parameter.
+More than one PDA can exist within a session as each pda can be used to retrieve values 
+from a different parameter.
 
 Methods on the PDA allow you to:
 
@@ -20,7 +20,7 @@ Methods on the PDA allow you to:
 !!! info "Best practice"
     
     * Opening a PDA uses up memory until the session is closed and disposed. It is best to open a PDA for a parameter once and cache it. Then you can reuse it throughout the session. An example of when this is particularly useful is when iterating through laps. It is better to open each PDA once than to open and dispose of them inside the lap iteration.
-    * Calls to a PDA are not thread safe. If you are wanting to access data using the same Parameter in different threads, it is better to consider opening a small pool of PDAs for the threads to use. You have to be extra careful when using method that require the PDA's current position to ensure that it is only being used by one thread.
+    * Calls to a PDA is not thread safe. If you are wanting to access data using the same Parameter in different threads, it is better to consider opening a small pool of PDAs for the threads to use. You have to be extra careful when using method that require the PDA's current position to ensure that it is only being used by one thread.
 
 ## Samples and Data
 Within the context of PDA methods, *samples* refers to the values as logged by the 
@@ -170,12 +170,11 @@ samples within the returned array.
 
 ### Getting Samples from a Live Session
 PDA contains the property `CurrentTime`, which keeps track of the
-location of the cursor. This cursor is specific to each instance of PDA.
-
-This can be used in combination with `GetNextSamples` to get new samples on the leading 
-edge during a live session. The `CurrentTime` gets updated to 1ns after the last sample 
-retrieved.
-
+location of the cursor. 
+This cursor is specific to each instance of PDA and can be used in combination with 
+`GetNextSamples` to get new samples on the leading edge during a live session.
+After the samples have been retrieved, the `CurrentTime` gets updated to 1ns after the
+timestamp of the last sample retrieved.
 
 
 === "C#"
@@ -314,6 +313,7 @@ retrieved.
 
 ### Caching PDA to Improve Efficiency
 It is advisable to reuse PDAs regardless of whether multiple parameters are in use. 
+A dictionary with the parameter identifier can be used to achieve this. 
 
 === "C#"
 
@@ -388,13 +388,16 @@ It is advisable to reuse PDAs regardless of whether multiple parameters are in u
     # Initialise SQLRace API
     Core.Initialize()
     session_manager = SessionManager.CreateSessionManager()
-    
-    
+
     # Load existing session
     client_session = session_manager.Load(sessionKey, connection_string)
+    
+    # Create the pda cache
     pda_cache = {}
+
     # Obtain the session
     session = client_session.Session
+
     for parameterIdentifier in parameterIdentifiers:
         # Open and cache PDA
         if parameterIdentifier in pda_cache:
