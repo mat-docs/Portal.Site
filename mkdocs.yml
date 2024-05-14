@@ -18,7 +18,7 @@ theme:
     - navigation.tabs
     - toc.integrate
 
-copyright: Copyright &copy; 2021 McLaren Applied Ltd.
+copyright: Copyright &copy; 2024 McLaren Applied Ltd.
 
 nav:
   - Home: index.md
@@ -37,6 +37,7 @@ nav:
       - manual/ui/mouse.md
     - Recording:
       - manual/recording/session-identifier-macros.md
+      - manual/recording/nascar-telemetry-recorder.md
     - Functions:
         - FDL Operators:            manual/functions/fdl-operators.md
         - Processors:               manual/functions/processors.md
