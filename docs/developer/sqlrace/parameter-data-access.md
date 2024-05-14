@@ -338,33 +338,35 @@ A dictionary with the parameter identifier can be used to achieve this.
         // Obtain the session
         var session = clientSession.Session;
         
-        foreach (var parameterIdentifier in parameterIdentifiers)
+        foreach (var lap in session.LapCollection)
         {
-            // Open and cache PDA
-            ParameterDataAccessBase pda;
-            if (pdaCache.ContainsKey(parameterIdentifier))
+            foreach (var parameterIdentifier in parameterIdentifiers)
             {
-                pda = pdaCache[parameterIdentifier];
+                // Open and cache PDA
+                ParameterDataAccessBase pda;
+                if (pdaCache.ContainsKey(parameterIdentifier))
+                {
+                    pda = pdaCache[parameterIdentifier];
+                }
+                else
+                {
+                    pda = session.CreateParameterDataAccess(parameterIdentifier);
+                    pdaCache[parameterIdentifier] = pda;
+                }
+
+                // Go to the start of the lap
+                pda.GoTo(lap.StartTime);
+
+                // Get 10 samples
+                var parameterValues = pda.GetNextSamples(10, StepDirection.Forward);
+                Console.WriteLine($"Parameter: {parameterIdentifier}");
+                // Print data and status to console window
+                for (int i = 0; i < 10; i++)
+                {
+                    Console.WriteLine($"Data: {parameterValues.Data[i]}, Timestamp: {parameterValues.Timestamp[i]}, Status: {parameterValues.DataStatus[i]}");
+                }
+
             }
-            else
-            {
-                pda = session.CreateParameterDataAccess(parameterIdentifier);
-                pdaCache[parameterIdentifier] = pda;
-            }
-    
-            // Go to the start of the session
-            pda.GoTo(session.StartTime);
-    
-            // Get 10 samples
-            var parameterValues = pda.GetNextSamples(10, StepDirection.Forward);
-    
-            // Print data and status to console window
-            Console.WriteLine($"Parameter: {parameterIdentifier}");
-            for (int i = 0; i < 10; i++)
-            {
-                Console.WriteLine($"Data: {parameterValues.Data[i]}, Timestamp: {parameterValues.Timestamp[i]}, Status: {parameterValues.DataStatus[i]}");
-            }
-    
         }
     
         // Dispose the PDAs afterwards
@@ -398,26 +400,27 @@ A dictionary with the parameter identifier can be used to achieve this.
     # Obtain the session
     session = client_session.Session
 
-    for parameterIdentifier in parameterIdentifiers:
-        # Open and cache PDA
-        if parameterIdentifier in pda_cache:
-            pda = pda_cache[parameterIdentifier]
-        else:
-            pda = session.CreateParameterDataAccess(parameterIdentifier)
-            pda_cache[parameterIdentifier] = pda
-    
-        # Go to the start of the session
-        pda.GoTo(session.StartTime)
-    
-        # Get 10 samples
-        parameter_values = pda.GetNextSamples(10, StepDirection.Forward)
-    
-        # Print data and status to console window
-        print(f"Parameter: {parameterIdentifier}")
-        for i in range(10):
-            print(
-                f"Data: {parameter_values.Data[i]}, TimeStamp: {parameter_values.Timestamp[i]} Status: {parameter_values.DataStatus[i]}")
-    
+    for lap in session.LapCollection:
+        for parameterIdentifier in parameterIdentifiers:
+            # Open and cache PDA
+            if parameterIdentifier in pda_cache:
+                pda = pda_cache[parameterIdentifier]
+            else:
+                pda = session.CreateParameterDataAccess(parameterIdentifier)
+                pda_cache[parameterIdentifier] = pda
+        
+            # Go to the start of the session
+            pda.GoTo(lap.StartTime)
+        
+            # Get 10 samples
+            parameter_values = pda.GetNextSamples(10, StepDirection.Forward)
+        
+            # Print data and status to console window
+            print(f"Parameter: {parameterIdentifier}")
+            for i in range(10):
+                print(
+                    f"Data: {parameter_values.Data[i]}, TimeStamp: {parameter_values.Timestamp[i]} Status: {parameter_values.DataStatus[i]}")
+        
     for pda in pda_cache.values():
         pda.Dispose()
     
@@ -448,26 +451,28 @@ A dictionary with the parameter identifier can be used to achieve this.
     % Obtain the session
     session = clientSession.Session;
     
-    for parameterIdentifier = parameterIdentifiers
-        % Open and cache PDA
-        if isKey(pdaCache,parameterIdentifier)
-            pda = pdaCache(parameterIdentifier);
-        else
-            pda = session.CreateParameterDataAccess(parameterIdentifier);
-            pdaCache(parameterIdentifier) = pda;
+    for i=0:session.LapCollection.Count()-1
+        for parameterIdentifier = parameterIdentifiers
+            % Open and cache PDA
+            if isKey(pdaCache,parameterIdentifier)
+                pda = pdaCache(parameterIdentifier);
+            else
+                pda = session.CreateParameterDataAccess(parameterIdentifier);
+                pdaCache(parameterIdentifier) = pda;
+            end
+        
+            %  Go to the start of the session
+            pda.GoTo(session.LapCollection.Item(i).StartTime);
+            
+            % Get 10 samples
+            parameterValues = pda.GetNextSamples(10, StepDirection.Forward);
+            
+            % Print data and status to console window
+            fprintf("Parameter: %s",parameterIdentifier)
+            for j=1:10
+                fprintf("Data: %f, Timestamp: %i, Status: %s\n",parameterValues.Data(j),parameterValues.Timestamp(j),parameterValues.DataStatus(j))
+            end
         end
-    
-        %  Go to the start of the session
-        pda.GoTo(session.StartTime);
-        
-        % Get 10 samples
-        parameterValues = pda.GetNextSamples(10, StepDirection.Forward);
-        
-        % Print data and status to console window
-        fprintf("Parameter: %s",parameterIdentifier)
-        for i=1:10
-            fprintf("Data: %f, Timestamp: %i, Status: %s\n",parameterValues.Data(i),parameterValues.Timestamp(i),parameterValues.DataStatus(i))
-        end 
     end
 
     % Dispose objects once we are finish with it
