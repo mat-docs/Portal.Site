@@ -1,20 +1,23 @@
 # User Guide
 
 ## Articles
-[Performance Profilers](articles/profiling.md) (2021-12-12)
-:   _Instructions on capturing performance profiles_
+[NASCAR Telemetry Recorder](articles/nascar-telemetry-recorder.md) (2024-05-15)
+:   _Instructions to setup ATLAS to receive and visualise Telemetric data from NASCAR's Event Racing Data Platform_
 
 [Timeline Session Details](articles/timeline-info.md) (2023-08-18)
 :  _Introducing a new feature that shows session details as tooltip in the timeline_
 
-[Scatterplot Sample Modes](articles/scatterplot-sample-modes.md) (2021-08-06)
-:   _Understand how Scatterplot **Data Point Mode** alters the way samples are plotted for the Scatterplot display_
+[Performance Profilers](articles/profiling.md) (2021-12-12)
+:   _Instructions on capturing performance profiles_
+
+[Session Markers](articles/markers.md) (2021-12-12)
+:   _Information on annotating ranges of data using markers_
 
 [Decode dll](articles/decode-dll.md) (2021-11-29)
 :   _Instructions to upgrade existing decode dll to work with ATLAS (version 10.4.4 onwards)_
 
-[Session Markers](articles/markers.md) (2021-12-12)
-:   _Information on annotating ranges of data using markers_
+[Scatterplot Sample Modes](articles/scatterplot-sample-modes.md) (2021-08-06)
+:   _Understand how Scatterplot **Data Point Mode** alters the way samples are plotted for the Scatterplot display_
 
 ## Quick-Reference
 
