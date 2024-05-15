@@ -27,17 +27,17 @@ nav:
   - User Guide:
     - Index: manual/index.md
     - Articles:
+      - manual/articles/nascar-telemetry-recorder.md
       - manual/articles/timeline-info.md
-      - manual/articles/scatterplot-sample-modes.md
+      - manual/articles/profiling.md
       - manual/articles/markers.md
       - manual/articles/decode-dll.md
-      - manual/articles/profiling.md
+      - manual/articles/scatterplot-sample-modes.md
     - User Interface:
       - manual/ui/keyboard.md
       - manual/ui/mouse.md
     - Recording:
       - manual/recording/session-identifier-macros.md
-      - manual/recording/nascar-telemetry-recorder.md
     - Functions:
         - FDL Operators:            manual/functions/fdl-operators.md
         - Processors:               manual/functions/processors.md
