@@ -13,7 +13,7 @@ A free [GitHub](https://github.com/) account is required.
 
 ## Data and Recorder APIs
 
-[_Read and Write McLaren Telemetry data_](../sqlrace-api.md)
+[_Read and Write McLaren Telemetry data_](../sqlrace/sqlrace-api.md)
 
 **MESL.SQLRace.API**
 :   Data API, for reading and writing telemetry with McLaren SSN2 files and SQL Server databases;  
