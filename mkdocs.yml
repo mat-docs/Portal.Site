@@ -63,7 +63,6 @@ nav:
         - Overview: developer/sqlrace/sqlrace-api.md
         - Parameter Data Access: developer/sqlrace/parameter-data-access.md
     - 📘 ATLAS Display API:          developer/atlas-displayapi.md
-    - 📗 SECU4:                      secu4/secu4.md
     - ECU Bridge:
         - Concepts:             
             - Topic, Streams & Sessions:           developer/ecu-bridge/concepts/topic-streams-sessions.md
@@ -80,6 +79,7 @@ nav:
             - Model Execution:      developer/ecu-bridge/csharp/model.md
             - Advanced Samples:     developer/ecu-bridge/csharp/advanced.md
   - 📙 Integration Guide:           integration/index.md
+  - 📗 SECU4:                        secu4/secu4.md
   - Downloads:
     - downloads/index.md
   - Support:
