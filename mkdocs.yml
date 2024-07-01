@@ -79,7 +79,7 @@ nav:
             - Model Execution:      developer/ecu-bridge/csharp/model.md
             - Advanced Samples:     developer/ecu-bridge/csharp/advanced.md
   - 📙 Integration Guide:           integration/index.md
-  - 📗 SECU4:                        secu4/secu4.md
+  - 📗 SECU4:                       secu4/index.md
   - Downloads:
     - downloads/index.md
   - Support:
