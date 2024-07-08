@@ -4,7 +4,7 @@ McLaren provide an extensive SDK for customizing ATLAS and working with data.
 
 Get the libraries from our [GitHub packages feed](nuget/index.md).
 
-[Reading, Writing and Recording Data with the SQL Race API](sqlrace/sqlrace-api.md)
+[Reading, Writing and Recording Data with the SQL Race API](sqlrace/index)
 :   _Code Samples and API Reference, including:_
 
     * _Reading SSN files and associated sessions_
