@@ -12,7 +12,7 @@ theme:
       primary: 'grey'
       accent: 'indigo'
       toggle:
-        icon: material/brightness-7
+        icon: material/toggle-switch
         name: Switch to dark mode
 
     # Palette toggle for dark mode
@@ -21,7 +21,7 @@ theme:
       primary: 'grey'
       accent: 'indigo'
       toggle:
-        icon: material/brightness-4
+        icon: material/toggle-switch-off
         name: Switch to light mode
   custom_dir: overrides
   # assets/swoosh is cached aggressively - rename if icons change
