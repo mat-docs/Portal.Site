@@ -9,19 +9,19 @@ theme:
   # Palette toggle for light mode
     - media: "(prefers-color-scheme: light)"
       scheme: default
-      primary: 'grey'
-      accent: 'indigo'
+      primary: 'white'
+      accent: 'orange'
       toggle:
-        icon: material/toggle-switch
+        icon: material/brightness-7
         name: Switch to dark mode
 
     # Palette toggle for dark mode
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
       primary: 'black'
-      accent: 'indigo'
+      accent: 'orange'
       toggle:
-        icon: material/toggle-switch-off
+        icon: material/brightness-4
         name: Switch to light mode
   custom_dir: overrides
   # assets/swoosh is cached aggressively - rename if icons change
