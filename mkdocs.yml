@@ -25,6 +25,9 @@ nav:
   - News:
     - news/index.md
   - User Guide:
+    - Introduction: 
+      - manual/Introduction/ATLAS-variants.md
+      - manual/Introduction/Getting-Started.md
     - Index: manual/index.md
     - Articles:
       - manual/articles/nascar-telemetry-recorder.md
