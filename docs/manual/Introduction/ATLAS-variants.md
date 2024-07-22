@@ -2,7 +2,7 @@
 
 ## ATLAS packages 
 
-Various ATLAS functionality will be enable by different licensable variants. There are three main licence variants: ATLAS Basic, ATLAS GT and ATLAS Data Platform. ATLAS GT is also provided FoC for academic use for Universities and academic institutions
+Various ATLAS functionality will be enabled by different licensable variants. There are three main licence variants: ATLAS Basic, ATLAS GT and ATLAS Data Platform. ATLAS GT is also provided FoC for academic use for Universities and academic institutions
 
 ### ATLAS Basic
 
